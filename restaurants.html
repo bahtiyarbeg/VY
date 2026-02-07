@@ -2,43 +2,114 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>Restaurants — VY</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Restaurants — vy</title>
-<link rel="stylesheet" href="css/style.css">
+
+<style>
+:root{
+  --bg: linear-gradient(180deg,#eaf9f6,#f6fffd);
+  --card:#ffffff;
+  --text:#1f2d2b;
+  --muted:#6b7c78;
+}
+*{box-sizing:border-box;font-family:system-ui,-apple-system,sans-serif}
+body{margin:0;background:var(--bg);color:var(--text)}
+.container{max-width:900px;margin:auto;padding:20px}
+.header{text-align:center;margin-bottom:24px}
+.logo{max-width:120px}
+
+.back{
+  display:inline-block;
+  margin-bottom:16px;
+  text-decoration:none;
+  color:#2a9d8f;
+  font-weight:600;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:16px;
+}
+
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:18px;
+  text-decoration:none;
+  color:var(--text);
+  box-shadow:0 8px 22px rgba(0,0,0,.08);
+}
+
+.card h3{margin:0 0 6px}
+.card p{margin:0;color:var(--muted);font-size:14px}
+
+.footer{
+  margin-top:40px;
+  text-align:center;
+  color:var(--muted);
+}
+.footer .services{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin:16px 0;
+}
+.footer .services span{
+  background:#fff;
+  padding:8px 14px;
+  border-radius:20px;
+  font-size:13px;
+}
+</style>
 </head>
+
 <body>
+<div class="container">
 
-<header class="header">
-  <a href="index.html">← Back</a>
-  <h2>Restaurants</h2>
-</header>
+<a class="back" href="index.html">← Back</a>
 
-<main class="container">
-
-<div class="card">
-  <a target="_blank"
-     href="https://www.google.com/maps/search/halal+restaurant+Nha+Trang">
-     Halal Restaurants
-  </a>
+<div class="header">
+  <img src="images/logo.png" class="logo" alt="VY">
+  <p>Your guide in Nha Trang — <b>Tina</b></p>
 </div>
 
-<div class="card">
-  <a target="_blank"
-     href="https://www.google.com/maps/search/seafood+restaurant+Nha+Trang">
-     Seafood Restaurants
+<div class="grid">
+
+  <a class="card" href="https://www.google.com/maps/search/halal+restaurant+Nha+Trang" target="_blank">
+    <h3>🕌 Halal Restaurants</h3>
+    <p>Halal-certified and Muslim-friendly restaurants</p>
   </a>
+
+  <a class="card" href="https://www.google.com/maps/search/seafood+restaurant+Nha+Trang" target="_blank">
+    <h3>🦞 Seafood Restaurants</h3>
+    <p>Fresh seafood, local and popular places</p>
+  </a>
+
+  <a class="card" href="https://www.google.com/maps/search/buffet+restaurant+Nha+Trang" target="_blank">
+    <h3>🍽 Buffet / All You Can Eat</h3>
+    <p>Unlimited food, BBQ, hotpot and buffets</p>
+  </a>
+
 </div>
 
-<div class="card">
-  <a target="_blank"
-     href="https://www.google.com/maps/search/buffet+restaurant+Nha+Trang">
-     Buffet / All You Can Eat
-  </a>
+<div class="footer">
+  <strong>VY</strong><br>
+  Your guide in Nha Trang — <b>Tina</b>
+
+  <div class="services">
+    <span>Tours</span>
+    <span>Transfers</span>
+    <span>eSIM & SIM</span>
+    <span>Scooter Rental</span>
+    <span>Car Rental</span>
+    <span>Ticket Booking</span>
+  </div>
+
+  © VY · Nha Trang
 </div>
 
-</main>
-
-<a class="fab whatsapp" href="https://wa.me/84778532223" target="_blank">WA</a>
-
+</div>
 </body>
 </html>
