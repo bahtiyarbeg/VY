@@ -1,51 +1,228 @@
-<main class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VY — Transport & Tickets</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <h1>Transport & Tickets</h1>
+<style>
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: linear-gradient(180deg, #e9f7f5, #f6fbfa);
+    color: #1f2d2b;
+}
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+.back {
+    color: #2b8f87;
+    text-decoration: none;
+    font-weight: 500;
+}
+h1 {
+    text-align: center;
+    margin: 10px 0 20px;
+}
+.lang-switch {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.lang-switch button {
+    border: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: #e0f2ef;
+    cursor: pointer;
+    font-weight: 500;
+}
+.lang-switch button.active {
+    background: #2b8f87;
+    color: white;
+}
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.card h3 {
+    margin-top: 0;
+}
+ul {
+    padding-left: 18px;
+}
+.whatsapp {
+    display: block;
+    text-align: center;
+    background: #f4a261;
+    color: white;
+    padding: 14px;
+    border-radius: 16px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 12px;
+}
+.form input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 12px;
+    border: 1px solid #d0e6e2;
+}
+.form button {
+    width: 100%;
+    padding: 14px;
+    background: #2b8f87;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.footer {
+    text-align: center;
+    margin: 40px 0 20px;
+}
+.footer strong {
+    display: block;
+    margin-bottom: 10px;
+}
+.footer .services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+.footer .services span {
+    background: #e0f2ef;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+</style>
+</head>
 
-  <div class="card">
-    <h3>🎟 Tickets we provide</h3>
+<body>
+<div class="container">
 
-    <ul class="list">
-      <li>✈ Flights (domestic & international)</li>
-      <li>🚆 Trains</li>
-      <li>🚌 Buses & sleeper buses</li>
-      <li>🚐 Minivans & minibuses</li>
-      <li>🎢 VinWonders / Vinpearl tickets</li>
-      <li>🎭 Shows & theaters (Ambassador Dinner Cruise)</li>
-    </ul>
+<a class="back" href="index.html">← Back</a>
+<h1>Transport & Tickets</h1>
 
-    <p class="muted">
-      Tickets to <b>any destination</b> and <b>any city</b>.<br>
-      Availability — please check with your guide <b>Tina</b>.
-    </p>
+<div class="lang-switch">
+    <button onclick="setLang('en')" class="active">EN</button>
+    <button onclick="setLang('ru')">RU</button>
+    <button onclick="setLang('vi')">VI</button>
+</div>
 
-    <a class="btn primary" href="https://wa.me/84778532223" target="_blank">
-      Contact via WhatsApp
-    </a>
-  </div>
+<div class="card" id="tickets"></div>
 
-  <!-- TRANSFERS -->
-  <div class="card">
-    <h3>🚖 City Transfers (inside Nha Trang only)</h3>
+<div class="card" id="transfer"></div>
 
-    <p class="muted">
-      Transfers are available <b>only within Nha Trang city</b>.<br>
-      Please send where you want to go <b>from</b> and <b>to</b>.
-    </p>
+<div class="footer">
+    <strong>Your guide in Nha Trang — Tina</strong>
+    <div class="services">
+        <span>Excursions</span>
+        <span>Transfers</span>
+        <span>eSIM & SIM</span>
+        <span>Scooter & motorbike rental</span>
+        <span>Car rental</span>
+        <span>Ticket booking</span>
+    </div>
+</div>
 
-    <form action="https://wa.me/84778532223" method="get" target="_blank">
-      <textarea
-        name="text"
-        rows="3"
-        placeholder="From: (hotel / location)
-To: (destination)"
-        class="input"
-      ></textarea>
+</div>
 
-      <button class="btn secondary" type="submit">
-        Send transfer request
-      </button>
-    </form>
-  </div>
+<script>
+let lang = "en";
 
-</main>
+const content = {
+en: {
+ticketsTitle: "Tickets we provide",
+ticketsList: [
+"Flights (domestic & international)",
+"Trains",
+"Buses & sleeper buses",
+"Minivans & minibuses",
+"VinWonders / Vinpearl tickets",
+"Shows & theaters (Ambassador Dinner Cruise)"
+],
+ticketsText: "Tickets to any destination and any city. Availability — please check with your guide Tina.",
+transferTitle: "City Transfers (inside Nha Trang only)",
+transferText: "Transfers are available only within Nha Trang city. Please send where you want to go from and to."
+},
+ru: {
+ticketsTitle: "Билеты, которые мы продаём",
+ticketsList: [
+"Авиабилеты (внутренние и международные)",
+"Поезда",
+"Автобусы и слип-басы",
+"Минивэны и микроавтобусы",
+"Билеты VinWonders / Vinpearl",
+"Шоу и театры (ужин-круиз Ambassador)"
+],
+ticketsText: "Билеты в любом направлении и в любые города. Наличие уточняйте у гида Тина.",
+transferTitle: "Городские трансферы (только Нячанг)",
+transferText: "Трансферы доступны только внутри города Нячанг. Укажите откуда и куда."
+},
+vi: {
+ticketsTitle: "Vé chúng tôi cung cấp",
+ticketsList: [
+"Vé máy bay (nội địa & quốc tế)",
+"Tàu hỏa",
+"Xe khách & xe giường nằm",
+"Xe van & minibus",
+"Vé VinWonders / Vinpearl",
+"Show & nhà hát (Du thuyền Ambassador)"
+],
+ticketsText: "Bán vé đi mọi điểm đến, mọi thành phố. Vui lòng kiểm tra với hướng dẫn viên Tina.",
+transferTitle: "Đưa đón trong thành phố Nha Trang",
+transferText: "Chỉ hỗ trợ đưa đón trong nội thành Nha Trang. Vui lòng gửi điểm đi và điểm đến."
+}
+};
+
+function render() {
+const t = content[lang];
+
+document.getElementById("tickets").innerHTML = `
+<h3>${t.ticketsTitle}</h3>
+<ul>${t.ticketsList.map(i => `<li>${i}</li>`).join("")}</ul>
+<p>${t.ticketsText}</p>
+<a class="whatsapp" href="https://wa.me/?text=Hello%20Tina%2C%20I%20want%20to%20book%20tickets">Contact via WhatsApp</a>
+`;
+
+document.getElementById("transfer").innerHTML = `
+<h3>${t.transferTitle}</h3>
+<p>${t.transferText}</p>
+<div class="form">
+<input id="from" placeholder="From (hotel / location)">
+<input id="to" placeholder="To (destination)">
+<button onclick="sendTransfer()">Send transfer request</button>
+</div>
+`;
+}
+
+function sendTransfer() {
+const from = document.getElementById("from").value;
+const to = document.getElementById("to").value;
+const text = `Hello Tina, I need a city transfer in Nha Trang. From: ${from} To: ${to}`;
+window.open(`https://wa.me/?text=${encodeURIComponent(text)}`);
+}
+
+function setLang(l) {
+lang = l;
+document.querySelectorAll(".lang-switch button").forEach(b => b.classList.remove("active"));
+event.target.classList.add("active");
+render();
+}
+
+render();
+</script>
+
+</body>
+</html>
