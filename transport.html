@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>Transport & Tickets | VY</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Transport & Tickets — TourVietnam</title>
 
 <style>
 :root{
@@ -13,6 +13,7 @@
   --accent2:#2a9d8f;
   --text:#1f2d2b;
   --muted:#6b7c78;
+  --radius:18px;
 }
 
 *{box-sizing:border-box;font-family:system-ui,-apple-system,sans-serif}
@@ -24,9 +25,9 @@ body{
 }
 
 .container{
-  max-width:820px;
+  max-width:900px;
   margin:auto;
-  padding:16px;
+  padding:20px;
 }
 
 .back{
@@ -37,163 +38,154 @@ body{
 
 .logo{
   text-align:center;
-  margin:16px 0 8px;
+  margin:10px 0;
+  font-size:22px;
+  font-weight:700;
 }
 
-.logo img{
-  max-width:160px;
-}
-
-.subtitle{
+.sub{
   text-align:center;
   color:var(--muted);
-  margin-bottom:16px;
+  margin-bottom:10px;
 }
 
 .lang{
-  text-align:center;
-  margin-bottom:16px;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin:15px 0;
 }
 
-.lang span{
-  padding:6px 12px;
-  border-radius:12px;
-  margin:0 4px;
+.lang button{
+  border:none;
+  padding:8px 14px;
+  border-radius:20px;
   background:#dff3ef;
+  cursor:pointer;
   font-weight:600;
+}
+
+.lang button.active{
+  background:var(--accent2);
+  color:#fff;
 }
 
 .card{
   background:var(--card);
-  border-radius:18px;
-  padding:18px;
-  margin-bottom:16px;
+  border-radius:var(--radius);
+  padding:20px;
+  margin-bottom:20px;
   box-shadow:0 8px 24px rgba(0,0,0,.08);
 }
 
-.card h2{
-  margin-top:0;
-}
+h2{margin-top:0}
+
+ul{padding-left:20px}
 
 .btn{
   display:block;
-  text-align:center;
+  width:100%;
   padding:14px;
-  border-radius:16px;
+  border-radius:14px;
+  text-align:center;
   background:var(--accent);
   color:#fff;
   text-decoration:none;
   font-weight:700;
-  margin-top:12px;
-}
-
-.list li{
-  margin:6px 0;
+  margin-top:15px;
 }
 
 input{
   width:100%;
-  padding:12px;
-  margin-bottom:10px;
+  padding:14px;
+  margin-top:10px;
   border-radius:12px;
-  border:1px solid #cfe5e1;
+  border:1px solid #cfdedd;
 }
 
 .send{
   background:var(--accent2);
   color:#fff;
   border:none;
-  padding:14px;
   width:100%;
-  border-radius:16px;
+  padding:14px;
+  border-radius:14px;
   font-weight:700;
+  margin-top:12px;
+  cursor:pointer;
 }
 
 .footer{
   text-align:center;
-  margin:32px 0 16px;
+  color:var(--muted);
+  margin-top:30px;
 }
 
-.footer h3{
-  margin-bottom:8px;
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin-top:10px;
 }
 
 .tags span{
-  display:inline-block;
   background:#eef6f4;
-  padding:6px 12px;
+  padding:8px 14px;
   border-radius:20px;
-  margin:4px;
   font-size:14px;
 }
 </style>
 </head>
 
 <body>
-
 <div class="container">
 
 <a class="back" href="index.html">← Back</a>
 
-<div class="logo">
-  <img src="logo.png" alt="TourVietnam">
-</div>
-
-<div class="subtitle">
-  Your guide in Nha Trang — <strong>Tina</strong>
-</div>
+<div class="logo">TourVietnam</div>
+<div class="sub" id="guideText">Your guide in Nha Trang — Tina</div>
 
 <div class="lang">
-  <span>EN</span><span>RU</span><span>VI</span>
+  <button onclick="setLang('en')" class="active">EN</button>
+  <button onclick="setLang('ru')">RU</button>
+  <button onclick="setLang('vi')">VI</button>
 </div>
 
-<!-- TICKETS -->
 <div class="card">
-<h2>🎫 Tickets we provide</h2>
-
-<ul class="list">
-  <li>✈️ Flights (domestic & international)</li>
-  <li>🚆 Trains</li>
-  <li>🚌 Buses & sleeper buses</li>
-  <li>🚐 Minivans & minibuses</li>
-  <li>🎢 VinWonders / Vinpearl tickets</li>
-  <li>🎭 Shows & theaters (Ambassador Dinner Cruise)</li>
-</ul>
-
-<p>
-Tickets to <strong>any destination</strong> and <strong>any city</strong>.<br>
-Availability — please check with your guide <strong>Tina</strong>.
-</p>
-
-<a class="btn" href="https://wa.me/84342134941">Contact via WhatsApp</a>
+  <h2 id="ticketsTitle">🎫 Tickets we provide</h2>
+  <ul>
+    <li>✈️ Flights (domestic & international)</li>
+    <li>🚆 Trains</li>
+    <li>🚌 Buses & sleeper buses</li>
+    <li>🚐 Minivans & minibuses</li>
+    <li>🎢 VinWonders / Vinpearl tickets</li>
+    <li>🎭 Shows & theaters (Ambassador Dinner Cruise)</li>
+  </ul>
+  <p id="ticketsText">
+    Tickets to any destination and any city.<br>
+    Availability — please check with your guide Tina.
+  </p>
+  <a class="btn" href="https://wa.me/84778532223" target="_blank" id="waBtn">
+    Contact via WhatsApp
+  </a>
 </div>
 
-<!-- TRANSFERS -->
 <div class="card">
-<h2>🚖 Transfers</h2>
+  <h2 id="transferTitle">🚖 Transfers</h2>
+  <p id="transferText">
+    From Nha Trang to any city and from any city to Nha Trang.<br>
+    Inside Nha Trang we recommend Grab or Maxim.
+  </p>
 
-<p>
-• From <strong>Nha Trang</strong> to any city<br>
-• To <strong>Nha Trang</strong> from any city<br>
-• Airport Cam Ranh transfers<br>
-• Private cars, minivans, minibuses
-</p>
-
-<p style="color:var(--muted)">
-Inside Nha Trang city we recommend using <strong>Grab</strong> or <strong>Maxim</strong>.
-</p>
-
-<h3>Transfer request</h3>
-
-<input placeholder="From (city / hotel / airport)">
-<input placeholder="To (city / hotel / airport)">
-
-<button class="send">Send transfer request</button>
+  <input id="from" placeholder="From (city / hotel / airport)">
+  <input id="to" placeholder="To (city / hotel / airport)">
+  <button class="send" onclick="sendTransfer()" id="sendBtn">
+    Send transfer request
+  </button>
 </div>
 
-<!-- FOOTER -->
 <div class="footer">
-  <h3>TourVietnam</h3>
   <div class="tags">
     <span>Excursions</span>
     <span>Transfers</span>
@@ -202,9 +194,62 @@ Inside Nha Trang city we recommend using <strong>Grab</strong> or <strong>Maxim<
     <span>Car rental</span>
     <span>Ticket booking</span>
   </div>
-  <p style="color:#7a8f8b">© TourVietnam · Nha Trang</p>
+  <p>© VY · Nha Trang</p>
 </div>
 
 </div>
+
+<script>
+const data={
+en:{
+guide:"Your guide in Nha Trang — Tina",
+ticketsTitle:"🎫 Tickets we provide",
+ticketsText:"Tickets to any destination and any city.<br>Availability — please check with your guide Tina.",
+transferTitle:"🚖 Transfers",
+transferText:"From Nha Trang to any city and from any city to Nha Trang.<br>Inside Nha Trang we recommend Grab or Maxim.",
+wa:"Contact via WhatsApp",
+send:"Send transfer request"
+},
+ru:{
+guide:"Ваш гид в Нячанге — Тина",
+ticketsTitle:"🎫 Билеты, которые мы продаём",
+ticketsText:"Билеты в любое направление и любые города.<br>Наличие уточняйте у гида Тины.",
+transferTitle:"🚖 Трансферы",
+transferText:"Из Нячанга в любой город и из любого города в Нячанг.<br>В городе рекомендуем Grab или Maxim.",
+wa:"Связаться через WhatsApp",
+send:"Отправить запрос на трансфер"
+},
+vi:{
+guide:"Hướng dẫn viên của bạn tại Nha Trang — Tina",
+ticketsTitle:"🎫 Vé chúng tôi cung cấp",
+ticketsText:"Vé đến mọi điểm đến và mọi thành phố.<br>Vui lòng kiểm tra với hướng dẫn viên Tina.",
+transferTitle:"🚖 Dịch vụ đưa đón",
+transferText:"Từ Nha Trang đến mọi thành phố và từ mọi thành phố đến Nha Trang.<br>Trong thành phố khuyên dùng Grab hoặc Maxim.",
+wa:"Liên hệ qua WhatsApp",
+send:"Gửi yêu cầu đưa đón"
+}
+};
+
+function setLang(l){
+  document.querySelectorAll(".lang button").forEach(b=>b.classList.remove("active"));
+  document.querySelector(`.lang button[onclick="setLang('${l}')"]`).classList.add("active");
+  document.getElementById("guideText").innerHTML=data[l].guide;
+  document.getElementById("ticketsTitle").innerHTML=data[l].ticketsTitle;
+  document.getElementById("ticketsText").innerHTML=data[l].ticketsText;
+  document.getElementById("transferTitle").innerHTML=data[l].transferTitle;
+  document.getElementById("transferText").innerHTML=data[l].transferText;
+  document.getElementById("waBtn").innerHTML=data[l].wa;
+  document.getElementById("sendBtn").innerHTML=data[l].send;
+}
+
+function sendTransfer(){
+  const from=document.getElementById("from").value;
+  const to=document.getElementById("to").value;
+  if(!from||!to){alert("Please fill both fields");return;}
+  const msg=`Transfer request:%0AFrom: ${from}%0ATo: ${to}`;
+  window.open(`https://wa.me/84778532223?text=${msg}`,"_blank");
+}
+</script>
+
 </body>
 </html>
