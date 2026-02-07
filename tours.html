@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Tours & Experiences — Nha Trang</title>
+<title>Tours & Experiences</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
   margin:0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
-  background: linear-gradient(180deg,#e9f7f6 0%, #f4fbff 100%);
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;
+  background: linear-gradient(180deg,#dff4f1 0%,#cfeeee 35%,#eef9ff 100%);
   color:#1f2d2b;
 }
 
@@ -21,13 +21,13 @@ body{
 
 .back{
   text-decoration:none;
-  color:#2fb6aa;
+  color:#2aa7a1;
   font-weight:600;
 }
 
 h1{
   text-align:center;
-  margin:10px 0 14px;
+  margin:15px 0 10px;
 }
 
 .lang{
@@ -41,48 +41,58 @@ h1{
   border:none;
   padding:6px 14px;
   border-radius:20px;
-  background:#e1f3f1;
-  color:#2b7f78;
-  font-weight:600;
+  background:#e6f6f5;
   cursor:pointer;
+  font-weight:600;
 }
 
 .lang button.active{
-  background:#2fb6aa;
+  background:#2aa7a1;
   color:#fff;
 }
 
 .tour-card{
   background:#ffffff;
   border-radius:18px;
-  padding:18px 20px;
+  padding:16px;
   margin-bottom:16px;
-  box-shadow:0 12px 30px rgba(0,0,0,0.08);
-  border-left:5px solid #2fb6aa;
+  border-left:6px solid #2aa7a1;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  transition:.25s ease;
 }
 
-.tour-card h3{
-  margin:0;
+.tour-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 18px 40px rgba(0,0,0,.12);
+}
+
+.tour-title{
   font-size:18px;
+  font-weight:700;
+  margin-bottom:4px;
 }
 
-.tour-tagline{
-  color:#2fb6aa;
-  font-size:13px;
-  margin:6px 0;
-  font-weight:600;
+.tour-tags{
+  color:#2aa7a1;
+  font-size:14px;
+  margin-bottom:6px;
 }
 
 .tour-desc{
-  color:#445;
-  font-size:14px;
-  line-height:1.5;
+  font-size:15px;
+  margin-bottom:8px;
 }
 
 .tour-meta{
-  margin-top:10px;
-  font-size:12px;
-  color:#6a8b92;
+  font-size:13px;
+  color:#6b8a88;
+}
+
+footer{
+  text-align:center;
+  margin:30px 0 10px;
+  color:#6b8a88;
+  font-size:14px;
 }
 </style>
 </head>
@@ -90,231 +100,80 @@ h1{
 <body>
 <div class="container">
 
-<a href="index.html" class="back">← Back</a>
+<a class="back" href="index.html">← Back</a>
 
 <h1 id="title">Tours & Experiences</h1>
 
 <div class="lang">
-  <button onclick="setLang('en')" class="active">EN</button>
-  <button onclick="setLang('ru')">RU</button>
-  <button onclick="setLang('vi')">VI</button>
+  <button onclick="setLang('en')" id="btn-en">EN</button>
+  <button onclick="setLang('ru')" id="btn-ru">RU</button>
+  <button onclick="setLang('vi')" id="btn-vi">VI</button>
 </div>
 
 <div id="tours"></div>
+
+<footer>
+  Your guide in Nha Trang — Tina<br>
+  WhatsApp: +84 778 532 223
+</footer>
 
 </div>
 
 <script>
 const data = {
 en:[
-{
-t:"🏝 Island Hopping – 3 Islands",
-tag:"Snorkeling • Beach time • Tropical vibes",
-d:"Crystal-clear water, coral reefs and relaxing beaches. Perfect first tour in Nha Trang.",
-m:"⏱ Half-day · 👥 Couples / Friends · ⭐ Bestseller"
-},
-{
-t:"🏝 Extended Island Tour – 4 Islands",
-tag:"More islands • More snorkeling",
-d:"Extended island route with extra snorkeling spots and longer beach stops.",
-m:"⏱ Full day · 👥 Active travelers"
-},
-{
-t:"🌴 Robinson Island – Wild Beach Escape",
-tag:"Quiet • Nature • Relax",
-d:"Untouched beach, calm atmosphere and turquoise water far from crowds.",
-m:"⏱ Full day · 💑 Romantic"
-},
-{
-t:"🤿 Hon Mun Snorkeling Experience",
-tag:"Best coral reef in Nha Trang",
-d:"Top snorkeling location with colorful fish and clear visibility.",
-m:"⏱ Half-day · ⭐ Bestseller"
-},
-{
-t:"🏙 Nha Trang City Highlights",
-tag:"Culture • Temples • Local life",
-d:"Main attractions, pagodas and authentic city atmosphere.",
-m:"⏱ Half-day · 👨‍👩‍👧 Family friendly"
-},
-{
-t:"🌿 Ba Ho Waterfalls Adventure",
-tag:"Nature • Hiking • Fresh water",
-d:"Waterfalls, jungle paths and swimming in natural pools.",
-m:"⏱ Full day · 👟 Active tour"
-},
-{
-t:"🌳 Kong Forest Extreme Adventure",
-tag:"Zipline • Jungle • Adrenaline",
-d:"Zipline, rope courses and river crossings in the jungle.",
-m:"⏱ Full day · 💎 Premium"
-},
-{
-t:"✈️ Scenic Flight over Nha Trang",
-tag:"Aerial view • Coastline",
-d:"Panoramic flight over beaches, islands and the city.",
-m:"⏱ Short flight · 💎 Premium"
-},
-{
-t:"⛵ Private Yacht Charter",
-tag:"Luxury • Privacy • Crew",
-d:"Private yacht with crew for a luxury sea experience.",
-m:"⏱ Flexible · 💑 Romantic"
-},
-{
-t:"🚤 Catamaran Sunset Cruise",
-tag:"Sunset • Sea breeze",
-d:"Relaxing cruise with sunset views over the bay.",
-m:"⏱ Evening · 💑 Romantic"
-}
+{t:"Island hopping – 3 islands",tag:"🏝 Snorkeling • Relax",d:"Crystal clear water, coral reefs and tropical islands.",m:"⏱ Half day • ⭐ Popular"},
+{t:"Extended 4 islands tour",tag:"🌴 More islands",d:"Longer route with extra snorkeling spots.",m:"⏱ Full day"},
+{t:"Robinson Island",tag:"🌿 Nature • Chill",d:"Wild beach, calm sea and total relaxation.",m:"⏱ Full day"},
+{t:"Hon Mun snorkeling",tag:"🐠 Best coral reef",d:"The best snorkeling area in Nha Trang.",m:"⏱ Half day"},
+{t:"Nha Trang city tour",tag:"🏛 Culture • Local life",d:"Main landmarks, temples and local markets.",m:"⏱ Half day"},
+{t:"Ba Ho waterfalls",tag:"💧 Nature • Hiking",d:"Fresh waterfalls and jungle trails.",m:"⏱ Full day"},
+{t:"Jungle adventure Kong Forest",tag:"🧗 Zipline • Adventure",d:"Zipline, river crossing and jungle fun.",m:"⏱ Full day"},
+{t:"Scenic airplane flight",tag:"✈️ Aerial view",d:"Panoramic flight over the coastline.",m:"⏱ 30 minutes"},
+{t:"Private yacht rental",tag:"🛥 Luxury",d:"Private yacht with crew for your group.",m:"⏱ Flexible"}
 ],
-
 ru:[
-{
-t:"🏝 Тур по островам — 3 острова",
-tag:"Сноркелинг • Пляжи • Тропики",
-d:"Чистая вода, кораллы и отдых на островах. Отлично для первого знакомства.",
-m:"⏱ Полдня · 👥 Пары / Друзья · ⭐ Хит"
-},
-{
-t:"🏝 Тур по островам — 4 острова",
-tag:"Больше островов • Больше впечатлений",
-d:"Расширенный маршрут с дополнительными остановками.",
-m:"⏱ Весь день · 👥 Активные туристы"
-},
-{
-t:"🌴 Остров Робинзона",
-tag:"Уединение • Природа",
-d:"Дикий пляж, тишина и кристально чистая вода.",
-m:"⏱ Весь день · 💑 Романтично"
-},
-{
-t:"🤿 Сноркелинг в Хон Мун",
-tag:"Лучший риф Нячанга",
-d:"Яркие рыбы и отличная видимость под водой.",
-m:"⏱ Полдня · ⭐ Хит"
-},
-{
-t:"🏙 Обзорная экскурсия по Нячангу",
-tag:"Культура • Храмы",
-d:"Главные достопримечательности и местная жизнь.",
-m:"⏱ Полдня · 👨‍👩‍👧 Для семьи"
-},
-{
-t:"🌿 Водопады Ба Хо",
-tag:"Природа • Прогулки",
-d:"Тропы, водопады и купание в природных бассейнах.",
-m:"⏱ Весь день · 👟 Активный тур"
-},
-{
-t:"🌳 Конг Форест",
-tag:"Зиплайн • Джунгли",
-d:"Экстрим и развлечения в тропическом лесу.",
-m:"⏱ Весь день · 💎 Премиум"
-},
-{
-t:"✈️ Панорамный полёт",
-tag:"Вид сверху • Побережье",
-d:"Полёт над морем и городом.",
-m:"⏱ Короткий · 💎 Премиум"
-},
-{
-t:"⛵ Аренда частной яхты",
-tag:"Комфорт • Экипаж",
-d:"Роскошная яхта для приватного отдыха.",
-m:"⏱ Гибко · 💑 Романтично"
-},
-{
-t:"🚤 Катамаран на закате",
-tag:"Закат • Море",
-d:"Спокойная вечерняя прогулка по заливу.",
-m:"⏱ Вечер · 💑 Романтично"
-}
+{t:"Тур по островам — 3 острова",tag:"🏝 Сноркелинг • Отдых",d:"Чистая вода, кораллы и тропические острова.",m:"⏱ Полдня • ⭐ Популярно"},
+{t:"Расширенный тур — 4 острова",tag:"🌴 Больше островов",d:"Дольше маршрут и больше мест для сноркелинга.",m:"⏱ Весь день"},
+{t:"Остров Робинзона",tag:"🌿 Природа • Релакс",d:"Дикий пляж и полное расслабление.",m:"⏱ Весь день"},
+{t:"Сноркелинг Хон Мун",tag:"🐠 Лучшие кораллы",d:"Лучшее место для сноркелинга в Нячанге.",m:"⏱ Полдня"},
+{t:"Сити-тур Нячанг",tag:"🏛 Культура • Город",d:"Главные достопримечательности города.",m:"⏱ Полдня"},
+{t:"Водопады Ба Хо",tag:"💧 Природа • Пешком",d:"Водопады и прогулки по джунглям.",m:"⏱ Весь день"},
+{t:"Kong Forest",tag:"🧗 Экстрим",d:"Зиплайн, приключения и река.",m:"⏱ Весь день"},
+{t:"Полет на самолете",tag:"✈️ Вид сверху",d:"Панорамный полет над побережьем.",m:"⏱ 30 минут"},
+{t:"Аренда частной яхты",tag:"🛥 Люкс",d:"Частная яхта с экипажем.",m:"⏱ Гибко"}
 ],
-
 vi:[
-{
-t:"🏝 Tham quan đảo – 3 đảo",
-tag:"Lặn biển • Nghỉ dưỡng",
-d:"Nước trong xanh, san hô đẹp và thư giãn trên đảo.",
-m:"⏱ Nửa ngày · ⭐ Phổ biến"
-},
-{
-t:"🏝 Tour 4 đảo mở rộng",
-tag:"Nhiều đảo hơn",
-d:"Hành trình mở rộng với nhiều điểm dừng hơn.",
-m:"⏱ Cả ngày"
-},
-{
-t:"🌴 Đảo Robinson",
-tag:"Yên tĩnh • Thiên nhiên",
-d:"Bãi biển hoang sơ và không gian thư giãn.",
-m:"⏱ Cả ngày"
-},
-{
-t:"🤿 Lặn biển Hòn Mun",
-tag:"Rạn san hô đẹp nhất",
-d:"Ngắm san hô và cá đầy màu sắc.",
-m:"⏱ Nửa ngày"
-},
-{
-t:"🏙 City tour Nha Trang",
-tag:"Văn hoá • Địa phương",
-d:"Tham quan các điểm nổi bật của thành phố.",
-m:"⏱ Nửa ngày"
-},
-{
-t:"🌿 Thác Ba Hồ",
-tag:"Thiên nhiên • Leo núi",
-d:"Thác nước và hồ tự nhiên.",
-m:"⏱ Cả ngày"
-},
-{
-t:"🌳 Kong Forest",
-tag:"Zipline • Phiêu lưu",
-d:"Trải nghiệm mạo hiểm trong rừng.",
-m:"⏱ Cả ngày"
-},
-{
-t:"✈️ Bay ngắm cảnh",
-tag:"Toàn cảnh bờ biển",
-d:"Ngắm Nha Trang từ trên cao.",
-m:"⏱ Ngắn"
-},
-{
-t:"⛵ Thuê du thuyền riêng",
-tag:"Sang trọng • Riêng tư",
-d:"Du thuyền riêng có thủy thủ.",
-m:"⏱ Linh hoạt"
-},
-{
-t:"🚤 Du thuyền ngắm hoàng hôn",
-tag:"Hoàng hôn • Biển",
-d:"Thư giãn buổi tối trên vịnh.",
-m:"⏱ Buổi tối"
-}
+{t:"Tham quan đảo – 3 đảo",tag:"🏝 Lặn biển • Nghỉ dưỡng",d:"Nước trong xanh và san hô đẹp.",m:"⏱ Nửa ngày • ⭐ Phổ biến"},
+{t:"Tour 4 đảo mở rộng",tag:"🌴 Nhiều đảo hơn",d:"Hành trình dài hơn với nhiều điểm dừng.",m:"⏱ Cả ngày"},
+{t:"Đảo Robinson",tag:"🌿 Yên tĩnh • Thiên nhiên",d:"Bãi biển hoang sơ và thư giãn.",m:"⏱ Cả ngày"},
+{t:"Lặn biển Hòn Mun",tag:"🐠 San hô đẹp nhất",d:"Khu vực lặn nổi tiếng nhất.",m:"⏱ Nửa ngày"},
+{t:"City tour Nha Trang",tag:"🏛 Văn hóa • Thành phố",d:"Tham quan các điểm nổi bật.",m:"⏱ Nửa ngày"},
+{t:"Thác Ba Hồ",tag:"💧 Thiên nhiên • Leo núi",d:"Thác nước và rừng núi.",m:"⏱ Cả ngày"},
+{t:"Kong Forest",tag:"🧗 Phiêu lưu",d:"Zipline và khám phá rừng.",m:"⏱ Cả ngày"},
+{t:"Bay ngắm cảnh",tag:"✈️ Trên cao",d:"Ngắm toàn cảnh bờ biển.",m:"⏱ 30 phút"},
+{t:"Thuê du thuyền riêng",tag:"🛥 Cao cấp",d:"Du thuyền riêng có thủy thủ.",m:"⏱ Linh hoạt"}
 ]
 };
 
-function setLang(lang){
-document.querySelectorAll('.lang button').forEach(b=>b.classList.remove('active'));
-event.target.classList.add('active');
+function setLang(l){
+  document.querySelectorAll(".lang button").forEach(b=>b.classList.remove("active"));
+  document.getElementById("btn-"+l).classList.add("active");
 
-const box=document.getElementById('tours');
-box.innerHTML='';
-data[lang].forEach(t=>{
-box.innerHTML+=`
-<div class="tour-card">
-<h3>${t.t}</h3>
-<p class="tour-tagline">${t.tag}</p>
-<p class="tour-desc">${t.d}</p>
-<div class="tour-meta">${t.m}</div>
-</div>`;
-});
+  const box=document.getElementById("tours");
+  box.innerHTML="";
+  data[l].forEach(e=>{
+    box.innerHTML+=`
+      <div class="tour-card">
+        <div class="tour-title">${e.t}</div>
+        <div class="tour-tags">${e.tag}</div>
+        <div class="tour-desc">${e.d}</div>
+        <div class="tour-meta">${e.m}</div>
+      </div>`;
+  });
 }
 
-setLang('en');
+document.addEventListener("DOMContentLoaded",()=>setLang("en"));
 </script>
-
 </body>
 </html>
