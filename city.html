@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>City buses — Nha Trang</title>
+<title>City Buses — Nha Trang</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -17,41 +17,53 @@ body{
   margin:auto;
   padding:20px;
 }
-.back{
-  text-decoration:none;
-  color:#2a9d8f;
-  font-weight:600;
-}
 h1{
   text-align:center;
-  margin:10px 0 4px;
+  margin-bottom:6px;
 }
 .sub{
   text-align:center;
   color:#5c6f6b;
   font-size:14px;
-  margin-bottom:24px;
+  margin-bottom:20px;
 }
-.bus{
+.lang{
+  text-align:center;
+  margin-bottom:20px;
+}
+.lang button{
+  border:none;
+  padding:8px 14px;
+  border-radius:14px;
+  margin:0 4px;
+  cursor:pointer;
+  background:#dfeeee;
+  font-weight:600;
+}
+.lang button.active{
+  background:#2a9d8f;
+  color:#fff;
+}
+.route{
   background:#fff;
   border-radius:16px;
-  padding:16px;
-  margin-bottom:14px;
-  box-shadow:0 6px 20px rgba(0,0,0,.08);
+  padding:14px 16px;
+  margin-bottom:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.08);
 }
-.bus h3{
-  margin:0 0 6px;
+.route span{
+  display:block;
 }
-.bus p{
-  margin:4px 0;
-  font-size:14px;
-  color:#4b5f5b;
+.num{
+  font-weight:700;
+  font-size:16px;
+  margin-bottom:4px;
 }
 .note{
-  margin-top:30px;
-  font-size:14px;
-  color:#4b5f5b;
   text-align:center;
+  font-size:13px;
+  color:#5c6f6b;
+  margin-top:20px;
 }
 </style>
 </head>
@@ -59,61 +71,101 @@ h1{
 <body>
 <div class="container">
 
-<a class="back" href="index.html">← Back</a>
+<h1 id="title">City buses — Nha Trang</h1>
+<div class="sub" id="subtitle">Main municipal & VinBus routes</div>
 
-<h1>🚌 City buses — Nha Trang</h1>
-<div class="sub">
-Main public bus routes inside Nha Trang city  
-<br>Directions shown from north → south and west → east
+<div class="lang">
+  <button onclick="setLang('en')" id="btn-en" class="active">EN</button>
+  <button onclick="setLang('ru')" id="btn-ru">RU</button>
+  <button onclick="setLang('vi')" id="btn-vi">VI</button>
 </div>
 
-<!-- BUS 01 -->
-<div class="bus">
-  <h3>Bus 01</h3>
-  <p><strong>Route:</strong> Northern Bus Station → Southern Bus Station</p>
-  <p><strong>Direction:</strong> North → South</p>
-</div>
+<div id="routes"></div>
 
-<!-- BUS 02 -->
-<div class="bus">
-  <h3>Bus 02</h3>
-  <p><strong>Route:</strong> Vĩnh Phương → City Center</p>
-  <p><strong>Direction:</strong> West → East</p>
-</div>
-
-<!-- BUS 03 -->
-<div class="bus">
-  <h3>Bus 03</h3>
-  <p><strong>Route:</strong> Vĩnh Ngọc → Southern Bus Station</p>
-  <p><strong>Direction:</strong> North → South</p>
-</div>
-
-<!-- BUS 04 -->
-<div class="bus">
-  <h3>Bus 04</h3>
-  <p><strong>Route:</strong> Nha Trang Railway Station → Cam Ranh direction</p>
-  <p><strong>Direction:</strong> North → South</p>
-</div>
-
-<!-- BUS 05 -->
-<div class="bus">
-  <h3>Bus 05</h3>
-  <p><strong>Route:</strong> City Center → Cam Ranh Airport road</p>
-  <p><strong>Direction:</strong> North → South</p>
-</div>
-
-<!-- BUS 23 -->
-<div class="bus">
-  <h3>Bus 23</h3>
-  <p><strong>Route:</strong> Nha Trang Theatre → Vinpearl Cable Car</p>
-  <p><strong>Direction:</strong> City Center → East (Vinpearl)</p>
-</div>
-
-<div class="note">
-Inside Nha Trang city we recommend using <strong>Grab</strong> or <strong>Maxim</strong> for short trips.  
-<br>City buses are best for long routes and sightseeing.
+<div class="note" id="note">
+Inside Nha Trang city we recommend Grab or Maxim taxi services.
 </div>
 
 </div>
+
+<script>
+const data = {
+en:{
+ title:"City buses — Nha Trang",
+ subtitle:"Main municipal & VinBus routes",
+ note:"Inside Nha Trang city we recommend Grab or Maxim taxi services.",
+ routes:[
+  ["Bus 01","North Bus Station → South Bus Station"],
+  ["Bus 02","Vinh Luong → Vinpearl Cable Car"],
+  ["Bus 03","Hon Chong → Phuoc Dong"],
+  ["Bus 04","Vinh Thai → Hon Ro Port"],
+  ["Bus 05","Dien Khanh → Nha Trang Center"],
+
+  ["Bus 16-2 (VinBus)","Nha Trang Center → Vinpearl Cable Car"],
+  ["Bus 23 (VinBus)","City Theater → Vinpearl Cable Car"],
+  ["Bus 17 (VinBus)","Northern Area → VinWonders"],
+  ["Bus 31 (VinBus)","Western District → Vinpearl"],
+  ["Bus 22X (VinBus)","Cam Ranh Airport → Nha Trang Center"]
+ ]
+},
+ru:{
+ title:"Городские автобусы — Нячанг",
+ subtitle:"Муниципальные маршруты и VinBus",
+ note:"Внутри Нячанга рекомендуем пользоваться такси Grab или Maxim.",
+ routes:[
+  ["Автобус 01","Северный автовокзал → Южный автовокзал"],
+  ["Автобус 02","Винь Лыонг → Канатная дорога Vinpearl"],
+  ["Автобус 03","Хон Чонг → Фуок Донг"],
+  ["Автобус 04","Винь Тай → Порт Хон Ро"],
+  ["Автобус 05","Дьен Кхань → Центр Нячанга"],
+
+  ["Автобус 16-2 (VinBus)","Центр Нячанга → Канатная дорога Vinpearl"],
+  ["Автобус 23 (VinBus)","Городской театр → Канатная дорога Vinpearl"],
+  ["Автобус 17 (VinBus)","Север города → VinWonders"],
+  ["Автобус 31 (VinBus)","Западный район → Vinpearl"],
+  ["Автобус 22X (VinBus)","Аэропорт Камрань → Центр Нячанга"]
+ ]
+},
+vi:{
+ title:"Xe buýt thành phố — Nha Trang",
+ subtitle:"Tuyến xe buýt chính & VinBus",
+ note:"Di chuyển trong thành phố nên dùng Grab hoặc Maxim.",
+ routes:[
+  ["Xe 01","Bến xe Bắc → Bến xe Nam"],
+  ["Xe 02","Vĩnh Lương → Cáp treo Vinpearl"],
+  ["Xe 03","Hòn Chồng → Phước Đồng"],
+  ["Xe 04","Vĩnh Thái → Cảng Hòn Rớ"],
+  ["Xe 05","Diên Khánh → Trung tâm Nha Trang"],
+
+  ["Xe 16-2 (VinBus)","Trung tâm → Cáp treo Vinpearl"],
+  ["Xe 23 (VinBus)","Nhà hát thành phố → Cáp treo Vinpearl"],
+  ["Xe 17 (VinBus)","Khu Bắc → VinWonders"],
+  ["Xe 31 (VinBus)","Khu Tây → Vinpearl"],
+  ["Xe 22X (VinBus)","Sân bay Cam Ranh → Trung tâm"]
+ ]
+}
+};
+
+function setLang(lang){
+ document.getElementById("title").innerText=data[lang].title;
+ document.getElementById("subtitle").innerText=data[lang].subtitle;
+ document.getElementById("note").innerText=data[lang].note;
+
+ document.querySelectorAll(".lang button").forEach(b=>b.classList.remove("active"));
+ document.getElementById("btn-"+lang).classList.add("active");
+
+ const box=document.getElementById("routes");
+ box.innerHTML="";
+ data[lang].routes.forEach(r=>{
+  const d=document.createElement("div");
+  d.className="route";
+  d.innerHTML=`<span class="num">${r[0]}</span><span>${r[1]}</span>`;
+  box.appendChild(d);
+ });
+}
+
+setLang("en");
+</script>
+
 </body>
 </html>
