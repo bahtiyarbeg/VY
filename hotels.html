@@ -2,101 +2,274 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Hotels in Nha Trang</title>
+<title>Hotels in Nha Trang — VY</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
-body{
-  margin:0;
-  background:linear-gradient(180deg,#eaf9f6,#f6fffd);
-  font-family:system-ui,-apple-system,sans-serif;
-  color:#1f2d2b;
+:root{
+  --bg: linear-gradient(180deg,#eaf9f6,#f6fffd);
+  --card: rgba(255,255,255,.95);
+  --text: #1f2d2b;
+  --muted: #6b7c78;
+  --accent: #2a9d8f;
 }
-.container{
-  max-width:960px;
-  margin:auto;
-  padding:20px;
+
+*{box-sizing:border-box;font-family:system-ui,-apple-system,sans-serif}
+
+body{margin:0;background:var(--bg);color:var(--text)}
+
+header{
+  padding:18px;
+  text-align:center;
+  position:relative;
 }
+
 .back{
-  display:inline-block;
-  margin-bottom:20px;
+  position:absolute;
+  left:16px;
+  top:18px;
   text-decoration:none;
-  color:#2a9d8f;
+  font-weight:600;
+  color:var(--accent);
+}
+
+h1{margin:6px 0 4px}
+.subtitle{color:var(--muted);font-size:14px}
+
+.search{
+  padding:0 16px 16px;
+}
+.search input{
+  width:100%;
+  padding:14px 16px;
+  border-radius:16px;
+  border:none;
+  font-size:15px;
+  box-shadow:0 6px 20px rgba(0,0,0,.08);
+}
+
+.section{
+  padding:10px 16px 30px;
+}
+.section h2{margin:20px 0 12px}
+
+.list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.card{
+  background:var(--card);
+  padding:14px 16px;
+  border-radius:18px;
+  box-shadow:0 8px 22px rgba(0,0,0,.08);
+}
+
+.card a{
+  text-decoration:none;
+  color:var(--text);
   font-weight:600;
 }
-h1{text-align:center;}
-h2{margin-top:40px;}
-.list a{
-  display:block;
-  background:#fff;
-  padding:14px 18px;
-  border-radius:14px;
-  margin-bottom:10px;
-  text-decoration:none;
-  color:#1f2d2b;
-  box-shadow:0 6px 18px rgba(0,0,0,.08);
-}
-.list span{
-  display:block;
+
+.stars{
   font-size:13px;
-  color:#6b7c78;
+  color:#f4a261;
+  margin-top:4px;
+}
+
+.more{
+  margin-top:12px;
+  font-size:13px;
+}
+
+.more a{
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:600;
+}
+
+footer{
+  margin-top:40px;
+  padding:30px 16px;
+  text-align:center;
+  background:rgba(255,255,255,.7);
+  backdrop-filter:blur(10px);
+}
+
+footer h3{margin:6px 0}
+footer p{font-size:13px;color:var(--muted)}
+
+.services{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 12px;
+  justify-content:center;
+  margin:16px 0;
+}
+.services span{
+  background:rgba(0,0,0,.05);
+  padding:6px 10px;
+  border-radius:14px;
+  font-size:12px;
 }
 </style>
 </head>
 
 <body>
-<div class="container">
-<a class="back" href="index.html">← Back</a>
-<h1>Hotels in Nha Trang</h1>
-<p style="text-align:center;color:#6b7c78">Tap a hotel to open Google Maps</p>
 
-<h2>★★★★★ 5 Star Hotels</h2>
-<div class="list">
-<a href="https://maps.google.com?q=InterContinental+Nha+Trang">InterContinental Nha Trang<span>★★★★★</span></a>
-<a href="https://maps.google.com?q=Sheraton+Nha+Trang">Sheraton Nha Trang<span>★★★★★</span></a>
-<a href="https://maps.google.com?q=Vinpearl+Resort+Nha+Trang">Vinpearl Resort Nha Trang<span>★★★★★</span></a>
-<a href="https://maps.google.com?q=Vinpearl+Luxury+Nha+Trang">Vinpearl Luxury Nha Trang<span>★★★★★</span></a>
-<a href="https://maps.google.com?q=Amiana+Resort+Nha+Trang">Amiana Resort Nha Trang<span>★★★★★</span></a>
-<a href="https://maps.google.com?q=Mia+Resort+Nha+Trang">Mia Resort Nha Trang<span>★★★★★</span></a>
-<a href="https://maps.google.com?q=Sunrise+Nha+Trang+Beach+Hotel">Sunrise Nha Trang Beach Hotel<span>★★★★★</span></a>
-<a href="https://maps.google.com?q=Havana+Nha+Trang+Hotel">Havana Nha Trang Hotel<span>★★★★★</span></a>
-<a href="https://maps.google.com?q=Muong+Thanh+Luxury+Khanh+Hoa">Muong Thanh Luxury Khanh Hoa<span>★★★★★</span></a>
-<a href="https://maps.google.com?q=Boton+Blue+Hotel+Nha+Trang">Boton Blue Hotel<span>★★★★★</span></a>
+<header>
+  <a class="back" href="index.html">← Back</a>
+  <h1>Hotels in Nha Trang</h1>
+  <div class="subtitle">Verified hotels · Google Maps</div>
+</header>
 
-<!-- 40 ещё -->
+<div class="search">
+  <input type="text" id="search" placeholder="Search hotel or area...">
+</div>
+
+<div id="content"></div>
+
+<footer>
+  <h3>VY</h3>
+  <p>Your guide in Nha Trang — <b>Tina</b></p>
+  <div class="services">
+    <span>Excursions</span>
+    <span>Transfers</span>
+    <span>eSIM & SIM</span>
+    <span>Scooter & motorbike rental</span>
+    <span>Car rental</span>
+    <span>Ticket booking</span>
+  </div>
+  <p>© VY · Nha Trang</p>
+</footer>
+
 <script>
-for(let i=11;i<=50;i++){
- document.write(`<a href="https://maps.google.com?q=Luxury+Hotel+Nha+Trang+${i}">Luxury Hotel Nha Trang ${i}<span>★★★★★</span></a>`);
-}
-</script>
-</div>
+const sections = [
+  {
+    title:"★★★★★ 5 Star Hotels",
+    stars:"★★★★★",
+    more:"https://www.google.com/maps/search/5+star+hotel+Nha+Trang",
+    hotels:[
+      "InterContinental Nha Trang",
+      "Sheraton Nha Trang",
+      "Vinpearl Resort Nha Trang",
+      "Vinpearl Luxury Nha Trang",
+      "Vinpearl Beachfront Nha Trang",
+      "Amiana Resort Nha Trang",
+      "Mia Resort Nha Trang",
+      "Sunrise Nha Trang Beach Hotel",
+      "Havana Nha Trang Hotel",
+      "Muong Thanh Luxury Khanh Hoa",
+      "Boton Blue Hotel & Spa",
+      "Ana Mandara Cam Ranh",
+      "Alma Resort Cam Ranh",
+      "Fusion Resort Cam Ranh",
+      "The Anam Cam Ranh",
+      "Radisson Blu Cam Ranh",
+      "Melia Vinpearl Nha Trang"
+    ]
+  },
+  {
+    title:"★★★★ 4 Star Hotels",
+    stars:"★★★★",
+    more:"https://www.google.com/maps/search/4+star+hotel+Nha+Trang",
+    hotels:[
+      "Novotel Nha Trang",
+      "Liberty Central Nha Trang",
+      "Citadines Bayfront Nha Trang",
+      "StarCity Hotel",
+      "Queen Ann Hotel",
+      "DTX Hotel Nha Trang",
+      "Regalia Gold Hotel",
+      "Maple Hotel & Apartment",
+      "Comodo Nha Trang",
+      "Galliot Hotel",
+      "Aaron Hotel",
+      "Majestic Premium Hotel",
+      "Golden Peak Hotel",
+      "Yasaka Saigon Nha Trang",
+      "Poseidon Hotel",
+      "LegendSea Hotel",
+      "Avari Hotel",
+      "Barcelona Hotel"
+    ]
+  },
+  {
+    title:"★★★ 3 Star Hotels",
+    stars:"★★★",
+    more:"https://www.google.com/maps/search/3+star+hotel+Nha+Trang",
+    hotels:[
+      "Galina Hotel",
+      "Dendro Hotel",
+      "Regalia Hotel",
+      "Azura Gold Hotel",
+      "Seasing Boutique Hotel",
+      "Senia Hotel",
+      "LeMore Hotel",
+      "Imperial Nha Trang Hotel",
+      "Emerald Bay Hotel",
+      "Holi Panorama Hotel"
+    ]
+  },
+  {
+    title:"🏢 Apartment Hotels",
+    stars:"",
+    more:"https://www.google.com/maps/search/apartment+hotel+Nha+Trang",
+    hotels:[
+      "Citadines Bayfront Nha Trang",
+      "Maple Hotel & Apartment",
+      "Holi Panorama",
+      "Muong Thanh Apartment",
+      "Gold Coast Apartment",
+      "Scenia Bay Apartment",
+      "Panorama Nha Trang Apartment",
+      "Ocean View Apartment"
+    ]
+  }
+];
 
-<h2>★★★★ 4 Star Hotels</h2>
-<div class="list">
-<script>
-for(let i=1;i<=50;i++){
- document.write(`<a href="https://maps.google.com?q=4+Star+Hotel+Nha+Trang+${i}">4 Star Hotel Nha Trang ${i}<span>★★★★</span></a>`);
-}
-</script>
-</div>
+const content = document.getElementById("content");
 
-<h2>★★★ 3 Star Hotels</h2>
-<div class="list">
-<script>
-for(let i=1;i<=50;i++){
- document.write(`<a href="https://maps.google.com?q=3+Star+Hotel+Nha+Trang+${i}">3 Star Hotel Nha Trang ${i}<span>★★★</span></a>`);
-}
-</script>
-</div>
+function render(filter=""){
+  content.innerHTML="";
+  sections.forEach(sec=>{
+    const list = sec.hotels.filter(h=>h.toLowerCase().includes(filter));
+    if(!list.length) return;
 
-<h2>🏢 Apartment Hotels</h2>
-<div class="list">
-<script>
-for(let i=1;i<=30;i++){
- document.write(`<a href="https://maps.google.com?q=Apartment+Hotel+Nha+Trang+${i}">Apartment Hotel Nha Trang ${i}<span>Apart Hotel</span></a>`);
-}
-</script>
-</div>
+    const block=document.createElement("div");
+    block.className="section";
+    block.innerHTML=`<h2>${sec.title}</h2><div class="list"></div>`;
+    const ul=block.querySelector(".list");
 
-</div>
+    list.forEach(h=>{
+      const card=document.createElement("div");
+      card.className="card";
+      card.innerHTML=`
+        <a target="_blank"
+           href="https://www.google.com/maps/search/${encodeURIComponent(h)}">
+           ${h}
+        </a>
+        <div class="stars">${sec.stars}</div>`;
+      ul.appendChild(card);
+    });
+
+    block.innerHTML+=`<div class="more">
+      <a target="_blank" href="${sec.more}">
+        View more in Google Maps →
+      </a>
+    </div>`;
+
+    content.appendChild(block);
+  });
+}
+
+render();
+
+document.getElementById("search").addEventListener("input",e=>{
+  render(e.target.value.toLowerCase());
+});
+</script>
+
 </body>
 </html>
