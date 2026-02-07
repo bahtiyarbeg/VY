@@ -1,212 +1,33 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Hotels in Nha Trang</title>
-
-<style>
-body{
-  margin:0;
-  font-family:system-ui,-apple-system,sans-serif;
-  background:linear-gradient(180deg,#eaf9f6,#f6fffd);
-  color:#1f2d2b;
-}
-header{text-align:center;padding:16px}
-section{padding:16px}
-h2{margin-top:32px}
-.list a{
-  display:block;
-  background:rgba(255,255,255,0.9);
-  padding:14px;
-  margin-bottom:10px;
-  border-radius:14px;
-  text-decoration:none;
-  color:#1f2d2b;
-  box-shadow:0 6px 20px rgba(0,0,0,.08)
-}
-.stars{color:#f4a261}
-.whatsapp{
-  margin:24px;
-  padding:16px;
-  background:#f4a261;
-  color:#fff;
-  text-align:center;
-  border-radius:16px;
-  text-decoration:none;
-  font-weight:700;
-  display:block;
-}
-.back{display:block;text-align:center;margin-top:8px}
-</style>
+<meta charset="UTF-8">
+<title>Hotels</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-<header>
-  <a class="back" href="index.html">← Назад</a>
-  <h1>Отели Нячанга</h1>
-  <p>2★ – 5★ · Апарт-отели · Курорты<br>
-  Нажмите на отель — откроется Google Maps</p>
-</header>
+<a class="back" href="index.html">Back</a>
 
-<section id="content"></section>
+<div class="container">
+<h1>Hotels in Nha Trang</h1>
+<p>Tap hotel name to open Google Maps</p>
 
-<a class="whatsapp" href="https://wa.me/84778532223">
-  Подобрать и забронировать через WhatsApp
-</a>
+<div class="card">InterContinental Nha Trang ★★★★★</div>
+<div class="card">Sheraton Nha Trang ★★★★★</div>
+<div class="card">Vinpearl Resort Nha Trang ★★★★★</div>
+<div class="card">Amiana Resort ★★★★★</div>
 
-<script>
-const hotels = [
+<div class="card">Novotel Nha Trang ★★★★</div>
+<div class="card">Liberty Central ★★★★</div>
+<div class="card">Citadines Bayfront ★★★★</div>
 
-/* ⭐⭐⭐⭐⭐ 5★ (30) */
-["InterContinental Nha Trang",5],
-["Sheraton Nha Trang",5],
-["Vinpearl Resort Nha Trang",5],
-["Vinpearl Luxury Nha Trang",5],
-["Vinpearl Beachfront",5],
-["Amiana Resort Nha Trang",5],
-["Mia Resort Nha Trang",5],
-["Sunrise Nha Trang Beach Hotel",5],
-["Havana Nha Trang Hotel",5],
-["Muong Thanh Luxury Khanh Hoa",5],
-["Muong Thanh Luxury Vien Trieu",5],
-["Best Western Premier Marvella",5],
-["Regalia Gold Hotel",5],
-["Boton Blue Hotel & Spa",5],
-["Duyen Ha Resort Cam Ranh",5],
-["Alma Resort Cam Ranh",5],
-["Fusion Resort Cam Ranh",5],
-["Ana Mandara Cam Ranh",5],
-["Selectum Noa Resort",5],
-["The Anam Cam Ranh",5],
-["Radisson Blu Cam Ranh",5],
-["Movenpick Cam Ranh",5],
-["Nha Trang Marriott Resort",5],
-["Melia Vinpearl Empire",5],
-["Liberty Central Signature",5],
-["The Costa Nha Trang",5],
-["Premier Havana Gold",5],
-["Sunbay Park Hotel & Resort",5],
-["Queen Ann Nha Trang",5],
-["Le Meridien Cam Ranh",5],
+<div class="card">Maple Hotel ★★★</div>
+<div class="card">Galina Hotel ★★★</div>
+<div class="card">Dendro Hotel ★★★</div>
 
-/* ⭐⭐⭐⭐ 4★ (30) */
-["Novotel Nha Trang",4],
-["Liberty Central Nha Trang",4],
-["Citadines Bayfront",4],
-["Maple Hotel",4],
-["Galina Hotel",4],
-["Dendro Gold Hotel",4],
-["Regalia Nha Trang",4],
-["Aaron Hotel",4],
-["Apus Hotel",4],
-["The Summer Hotel",4],
-["Golden Rain Hotel",4],
-["Majestic Premium Hotel",4],
-["Comodo Hotel",4],
-["Virgo Hotel",4],
-["Venue Hotel",4],
-["Rigel Hotel",4],
-["Nagar Hotel",4],
-["Green World Hotel",4],
-["Cosy Hotel",4],
-["Edele Hotel",4],
-["StarCity Hotel",4],
-["Xala Boutique Hotel",4],
-["Seana Hotel",4],
-["Golden Lotus Hotel",4],
-["Azura Gold Hotel",4],
-["DTX Hotel",4],
-["Aaron Boutique Hotel",4],
-["Pavillon Garden Hotel",4],
-["Bellevue Hotel",4],
-["Royal Beach Boton",4],
-
-/* ⭐⭐⭐ 3★ (30) */
-["Dendro Hotel",3],
-["Balcony Hotel",3],
-["Bondi Backpackers",3],
-["Majestic Star Hotel",3],
-["Sky Beach Hotel",3],
-["Tabalo Hostel",3],
-["Khách Sạn Asia",3],
-["Nice Swan Hotel",3],
-["Lucky Sun Hotel",3],
-["Blue Pearl Hotel",3],
-["Golden Sea Hotel",3],
-["Ruby Hotel",3],
-["Palm Beach Hotel",3],
-["Lemore Hotel",3],
-["Ngoc Phu Hotel",3],
-["White Lion Hotel",3],
-["Nhi Phi Hotel",3],
-["Tristar Hotel",3],
-["La Suisse Hotel",3],
-["New Sun Hotel",3],
-["Palm City Hotel",3],
-["Golden Star Hotel",3],
-["Luxury Hotel Nha Trang",3],
-["Yasaka Saigon Hotel",3],
-["Forget Me Not Hotel",3],
-["Seaside Hotel",3],
-["Ocean Pearl Hotel",3],
-["Golden Holiday Hotel",3],
-["Majestic Hotel",3],
-["Smile Hotel",3],
-
-/* 🏢 Апарт-отели (30) */
-["Muong Thanh Apartments",0],
-["Gold Coast Apartments",0],
-["Panorama Nha Trang",0],
-["Scenia Bay Apartments",0],
-["The Costa Residences",0],
-["Ocean View Apartments",0],
-["Luxury Muong Thanh Apartments",0],
-["Seaview Apartment Nha Trang",0],
-["Maple Serviced Apartments",0],
-["Sunrise Ocean View Apartment",0],
-["Ariyana Smart Condotel",0],
-["Napoleon Castle Apartment",0],
-["Gold Ocean Apartment",0],
-["Marina Plaza Apartment",0],
-["Royal Beach Apartments",0],
-["Nha Trang View Apartment",0],
-["Anrizon Apartment",0],
-["Vinpearl Condotel",0],
-["Sun Bay Apartment",0],
-["Blue Sea Apartment",0],
-["An Khang Apartment",0],
-["Luxury Panorama Apartment",0],
-["Green Bay Apartment",0],
-["Venity Apartment",0],
-["An Nhi Apartment",0],
-["Peace Apartment",0],
-["Ocean Star Apartment",0],
-["Queen Apartment",0],
-["Luxury Beach Apartment",0],
-["Happy House Apartment",0],
-];
-
-const content = document.getElementById("content");
-
-function render(title,stars){
-  content.innerHTML += `<h2>${title}</h2><div class="list"></div>`;
-  const list = content.lastChild;
-  hotels.filter(h=>h[1]===stars).forEach(h=>{
-    list.innerHTML += `
-      <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(h[0])}">
-        ${h[0]}<br>
-        <span class="stars">${stars>0?"★".repeat(stars):"Апарт-отель"}</span>
-      </a>`;
-  });
-}
-
-render("⭐⭐⭐⭐⭐ Пятизвёздочные",5);
-render("⭐⭐⭐⭐ Четырёхзвёздочные",4);
-render("⭐⭐⭐ Трёхзвёздочные",3);
-render("🏢 Апарт-отели",0);
-</script>
+<a class="btn" href="https://wa.me/84778532223">Book via WhatsApp</a>
+</div>
 
 </body>
 </html>
