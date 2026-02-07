@@ -2,28 +2,61 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>City Buses | Nha Trang</title>
+<title>City buses — Nha Trang</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-:root{
-  --bg:#eaf9f6;
-  --card:#ffffff;
-  --accent:#2a9d8f;
-  --text:#1f2d2b;
-  --muted:#6b7c78;
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;
+  background:#eaf7f4;
+  color:#1f2d2b;
 }
-*{box-sizing:border-box;font-family:system-ui,-apple-system,sans-serif}
-body{margin:0;background:var(--bg);color:var(--text)}
-.container{max-width:900px;margin:auto;padding:20px}
-.back{text-decoration:none;color:var(--accent);font-weight:600}
-h1{text-align:center;margin:10px 0}
-.sub{text-align:center;color:var(--muted);margin-bottom:20px}
-.lang{display:flex;justify-content:center;gap:10px;margin-bottom:20px}
-.lang button{border:none;padding:8px 14px;border-radius:20px;background:#dff3ef;cursor:pointer;font-weight:600}
-.lang button.active{background:var(--accent);color:#fff}
-.card{background:var(--card);border-radius:18px;padding:16px;margin-bottom:14px;box-shadow:0 8px 24px rgba(0,0,0,.08)}
-.footer{text-align:center;margin-top:30px;color:var(--muted)}
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+}
+.back{
+  text-decoration:none;
+  color:#2a8f7b;
+  font-weight:600;
+}
+h1{
+  text-align:center;
+  margin:10px 0 6px;
+}
+.sub{
+  text-align:center;
+  color:#5c6f6b;
+  font-size:14px;
+  margin-bottom:20px;
+}
+.section{
+  margin:20px 0 10px;
+  font-weight:700;
+  color:#2a8f7b;
+}
+.card{
+  background:#fff;
+  border-radius:16px;
+  padding:14px 16px;
+  margin-bottom:10px;
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+}
+.bus{
+  font-weight:700;
+}
+.route{
+  font-size:14px;
+  color:#4f6360;
+}
+.footer{
+  margin-top:30px;
+  text-align:center;
+  font-size:14px;
+  color:#6a7f7b;
+}
 </style>
 </head>
 
@@ -32,119 +65,47 @@ h1{text-align:center;margin:10px 0}
 
 <a class="back" href="index.html">← Back</a>
 
-<h1 id="title">🚌 City Buses in Nha Trang</h1>
-<div class="sub" id="subtitle">Public city bus routes useful for tourists</div>
+<h1>City buses — Nha Trang</h1>
+<div class="sub">Bus number · start point · final stop</div>
 
-<div class="lang">
-  <button onclick="setLang('en')" class="active">EN</button>
-  <button onclick="setLang('ru')">RU</button>
-  <button onclick="setLang('vi')">VI</button>
+<div class="section">North → South</div>
+
+<div class="card"><div class="bus">Bus 1</div><div class="route">Vĩnh Phương → Vĩnh Trường</div></div>
+<div class="card"><div class="bus">Bus 2</div><div class="route">Vĩnh Ngọc → City Center</div></div>
+<div class="card"><div class="bus">Bus 6</div><div class="route">Vĩnh Phương → City Center</div></div>
+<div class="card"><div class="bus">Bus 7</div><div class="route">Vĩnh Thái → City Center</div></div>
+<div class="card"><div class="bus">Bus 15</div><div class="route">City Center → Southern Communes</div></div>
+<div class="card"><div class="bus">Bus 16</div><div class="route">Dam Market → Southern Area</div></div>
+
+<div class="section">West → East</div>
+
+<div class="card"><div class="bus">Bus 3</div><div class="route">Hon Xuong Bus Station → Long Son Pagoda</div></div>
+<div class="card"><div class="bus">Bus 4</div><div class="route">Nha Trang Railway Station → Southern Bus Station</div></div>
+<div class="card"><div class="bus">Bus 5</div><div class="route">City Center → Cam Ranh Airport</div></div>
+<div class="card"><div class="bus">Bus 8</div><div class="route">City Center → Amiana Area</div></div>
+<div class="card"><div class="bus">Bus 9</div><div class="route">City Center → Bai Dai Beach</div></div>
+<div class="card"><div class="bus">Bus 10</div><div class="route">City Center → Cam Ranh City</div></div>
+
+<div class="section">City & Coastal routes</div>
+
+<div class="card"><div class="bus">Bus 11</div><div class="route">Local route → Local route</div></div>
+<div class="card"><div class="bus">Bus 12</div><div class="route">Local route → Local route</div></div>
+<div class="card"><div class="bus">Bus 13</div><div class="route">City Loop → City Loop</div></div>
+<div class="card"><div class="bus">Bus 14</div><div class="route">City Center → Northern Area</div></div>
+<div class="card"><div class="bus">Bus 18</div><div class="route">City Center → Suburban Area</div></div>
+<div class="card"><div class="bus">Bus 19</div><div class="route">City Center → North-East Area</div></div>
+<div class="card"><div class="bus">Bus 20</div><div class="route">City Center → South Coast</div></div>
+
+<div class="section">Tourist / Vinpearl</div>
+
+<div class="card"><div class="bus">Bus 21</div><div class="route">City Center → Hon Chong</div></div>
+<div class="card"><div class="bus">Bus 22</div><div class="route">City Center → Countryside</div></div>
+<div class="card"><div class="bus">Bus 23</div><div class="route">Nha Trang Theatre → Vinpearl Cable Car</div></div>
+
+<div class="footer">
+For travel inside the city we recommend Grab or Maxim.
 </div>
 
-<div id="routes"></div>
-
-<div class="footer" id="note">
-Routes and schedules may change. Please check details with your guide Tina.
 </div>
-
-</div>
-
-<script>
-const data={
-en:{
-title:"🚌 City Buses in Nha Trang",
-subtitle:"Public city bus routes useful for tourists",
-note:"Routes and schedules may change. Please check details with your guide Tina.",
-routes:[
-"Bus 1 — North ↔ South Nha Trang (coastal route)",
-"Bus 2 — Vinh Ngoc ↔ City Center",
-"Bus 3 — City Center ↔ Vinpearl Port",
-"Bus 4 — City Center ↔ Hon Chong",
-"Bus 5 — City Center ↔ Dien Khanh",
-"Bus 6 — City Center ↔ Southern Bus Station",
-"Bus 7 — City Center ↔ Cam Ranh area",
-"Bus 8 — City Center ↔ I-Resort Hot Springs",
-"Bus 9 — City Center ↔ Po Nagar Cham Towers",
-"Bus 10 — City Center ↔ Railway Station",
-"Bus 11 — City Center ↔ Dam Market",
-"Bus 12 — City Center ↔ Xom Moi Market",
-"Bus 13 — City Center ↔ Oceanographic Museum",
-"Bus 14 — City Center ↔ Vinpearl Cable Car",
-"Bus 15 — City Center ↔ Northern Beaches",
-"Bus 16 — City Center ↔ Southern Beaches",
-"Bus 18 — City Center ↔ Cam Ranh Airport",
-"Bus 23 — City Center ↔ Southern districts / Cam Ranh direction"
-]
-},
-ru:{
-title:"🚌 Городские автобусы Нячанга",
-subtitle:"Основные маршруты городских автобусов",
-note:"Маршруты и расписания могут меняться. Уточняйте у гида Тины.",
-routes:[
-"Автобус 1 — Север ↔ Юг Нячанга (вдоль моря)",
-"Автобус 2 — Винь Нгок ↔ Центр",
-"Автобус 3 — Центр ↔ Порт Vinpearl",
-"Автобус 4 — Центр ↔ Хон Чонг",
-"Автобус 5 — Центр ↔ Диен Кхань",
-"Автобус 6 — Центр ↔ Южный автовокзал",
-"Автобус 7 — Центр ↔ район Камрань",
-"Автобус 8 — Центр ↔ I-Resort",
-"Автобус 9 — Центр ↔ Башни По Нагар",
-"Автобус 10 — Центр ↔ Ж/д вокзал",
-"Автобус 11 — Центр ↔ Рынок Дам",
-"Автобус 12 — Центр ↔ Рынок Сом Мой",
-"Автобус 13 — Центр ↔ Океанографический музей",
-"Автобус 14 — Центр ↔ Канатка Vinpearl",
-"Автобус 15 — Центр ↔ Северные пляжи",
-"Автобус 16 — Центр ↔ Южные пляжи",
-"Автобус 18 — Центр ↔ Аэропорт Камрань",
-"Автобус 23 — Центр ↔ Южные районы / направление Камрань"
-]
-},
-vi:{
-title:"🚌 Xe buýt thành phố Nha Trang",
-subtitle:"Các tuyến xe buýt công cộng cho du khách",
-note:"Các tuyến có thể thay đổi. Vui lòng hỏi hướng dẫn viên Tina.",
-routes:[
-"Tuyến 1 — Bắc ↔ Nam Nha Trang",
-"Tuyến 2 — Vĩnh Ngọc ↔ Trung tâm",
-"Tuyến 3 — Trung tâm ↔ Cảng Vinpearl",
-"Tuyến 4 — Trung tâm ↔ Hòn Chồng",
-"Tuyến 5 — Trung tâm ↔ Diên Khánh",
-"Tuyến 6 — Trung tâm ↔ Bến xe phía Nam",
-"Tuyến 7 — Trung tâm ↔ Khu vực Cam Ranh",
-"Tuyến 8 — Trung tâm ↔ I-Resort",
-"Tuyến 9 — Trung tâm ↔ Tháp Bà Ponagar",
-"Tuyến 10 — Trung tâm ↔ Ga tàu",
-"Tuyến 11 — Trung tâm ↔ Chợ Đầm",
-"Tuyến 12 — Trung tâm ↔ Chợ Xóm Mới",
-"Tuyến 13 — Trung tâm ↔ Viện Hải dương học",
-"Tuyến 14 — Trung tâm ↔ Cáp treo Vinpearl",
-"Tuyến 15 — Trung tâm ↔ Bãi biển phía Bắc",
-"Tuyến 16 — Trung tâm ↔ Bãi biển phía Nam",
-"Tuyến 18 — Trung tâm ↔ Sân bay Cam Ranh",
-"Tuyến 23 — Trung tâm ↔ Khu vực phía Nam / hướng Cam Ranh"
-]
-}
-};
-
-function setLang(l){
-  document.querySelectorAll(".lang button").forEach(b=>b.classList.remove("active"));
-  document.querySelector(`.lang button[onclick="setLang('${l}')"]`).classList.add("active");
-  document.getElementById("title").innerText=data[l].title;
-  document.getElementById("subtitle").innerText=data[l].subtitle;
-  document.getElementById("note").innerText=data[l].note;
-  const box=document.getElementById("routes");
-  box.innerHTML="";
-  data[l].routes.forEach(r=>{
-    const d=document.createElement("div");
-    d.className="card";
-    d.innerText=r;
-    box.appendChild(d);
-  });
-}
-setLang("en");
-</script>
-
 </body>
 </html>
