@@ -2,28 +2,89 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Transport & Tickets</title>
-<link rel="stylesheet" href="css/style.css">
+<title>Transport & Tickets — VY</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --bg: linear-gradient(180deg,#eaf9f6,#f6fffd);
+  --card:#ffffff;
+  --text:#1f2d2b;
+  --muted:#6b7c78;
+  --accent:#f4a261;
+}
+*{box-sizing:border-box;font-family:system-ui,-apple-system,sans-serif}
+body{margin:0;background:var(--bg);color:var(--text)}
+.container{max-width:900px;margin:auto;padding:20px}
+.header{text-align:center;margin-bottom:24px}
+.logo{max-width:120px}
+
+.back{
+  display:inline-block;
+  margin-bottom:16px;
+  text-decoration:none;
+  color:#2a9d8f;
+  font-weight:600;
+}
+
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:18px;
+  margin-bottom:16px;
+  box-shadow:0 8px 22px rgba(0,0,0,.08);
+}
+
+.button{
+  display:block;
+  background:var(--accent);
+  color:#fff;
+  text-align:center;
+  padding:16px;
+  border-radius:18px;
+  font-weight:700;
+  text-decoration:none;
+  margin-bottom:12px;
+}
+</style>
 </head>
+
 <body>
-
-<a class="back" href="index.html">Back</a>
-
 <div class="container">
-<h1>Transport & Tickets</h1>
 
-<div class="card">🚌 Nha Trang → Ho Chi Minh (Bus)</div>
-<div class="card">🚌 Nha Trang → Da Lat (Bus)</div>
-<div class="card">🚌 Nha Trang → Da Nang (Bus)</div>
+<a class="back" href="index.html">← Back</a>
 
-<div class="card">✈️ Cam Ranh → Ho Chi Minh</div>
-<div class="card">✈️ Cam Ranh → Hanoi</div>
-
-<div class="card">🚆 Nha Trang → Ho Chi Minh</div>
-<div class="card">🚆 Nha Trang → Da Nang</div>
-
-<a class="btn" href="https://wa.me/84778532223">Buy Tickets via WhatsApp</a>
+<div class="header">
+  <img src="images/logo.png" class="logo" alt="VY">
+  <p>Your guide in Nha Trang — <b>Tina</b></p>
 </div>
 
+<div class="card">
+  <h3>✈ Transport & Tickets</h3>
+
+  <a class="button" href="https://wa.me/84778532223" target="_blank">
+    Contact via WhatsApp
+  </a>
+
+  <p style="font-size:14px;color:var(--muted);text-align:center">
+    You can purchase tickets to any destination through us.<br>
+    Please check availability with your guide <b>Tina</b>.
+  </p>
+</div>
+
+<div class="card">
+  <h3>🚕 Transfers</h3>
+  <p style="color:var(--muted);font-size:14px">
+    Airport transfers, city transfers, private cars and minibuses.<br>
+    From 1 passenger to large groups.
+  </p>
+</div>
+
+<div class="footer" style="text-align:center;color:var(--muted);margin-top:40px">
+  <strong>VY</strong><br>
+  © VY · Nha Trang
+</div>
+
+</div>
 </body>
 </html>
