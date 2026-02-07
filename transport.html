@@ -1,90 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Transport & Tickets — VY</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<main class="container">
 
-<style>
-:root{
-  --bg: linear-gradient(180deg,#eaf9f6,#f6fffd);
-  --card:#ffffff;
-  --text:#1f2d2b;
-  --muted:#6b7c78;
-  --accent:#f4a261;
-}
-*{box-sizing:border-box;font-family:system-ui,-apple-system,sans-serif}
-body{margin:0;background:var(--bg);color:var(--text)}
-.container{max-width:900px;margin:auto;padding:20px}
-.header{text-align:center;margin-bottom:24px}
-.logo{max-width:120px}
+  <h1>Transport & Tickets</h1>
 
-.back{
-  display:inline-block;
-  margin-bottom:16px;
-  text-decoration:none;
-  color:#2a9d8f;
-  font-weight:600;
-}
+  <div class="card">
+    <h3>🎟 Tickets we provide</h3>
 
-.card{
-  background:var(--card);
-  padding:20px;
-  border-radius:18px;
-  margin-bottom:16px;
-  box-shadow:0 8px 22px rgba(0,0,0,.08);
-}
+    <ul class="list">
+      <li>✈ Flights (domestic & international)</li>
+      <li>🚆 Trains</li>
+      <li>🚌 Buses & sleeper buses</li>
+      <li>🚐 Minivans & minibuses</li>
+      <li>🎢 VinWonders / Vinpearl tickets</li>
+      <li>🎭 Shows & theaters (Ambassador Dinner Cruise)</li>
+    </ul>
 
-.button{
-  display:block;
-  background:var(--accent);
-  color:#fff;
-  text-align:center;
-  padding:16px;
-  border-radius:18px;
-  font-weight:700;
-  text-decoration:none;
-  margin-bottom:12px;
-}
-</style>
-</head>
+    <p class="muted">
+      Tickets to <b>any destination</b> and <b>any city</b>.<br>
+      Availability — please check with your guide <b>Tina</b>.
+    </p>
 
-<body>
-<div class="container">
+    <a class="btn primary" href="https://wa.me/84778532223" target="_blank">
+      Contact via WhatsApp
+    </a>
+  </div>
 
-<a class="back" href="index.html">← Back</a>
+  <!-- TRANSFERS -->
+  <div class="card">
+    <h3>🚖 City Transfers (inside Nha Trang only)</h3>
 
-<div class="header">
-  <img src="images/logo.png" class="logo" alt="VY">
-  <p>Your guide in Nha Trang — <b>Tina</b></p>
-</div>
+    <p class="muted">
+      Transfers are available <b>only within Nha Trang city</b>.<br>
+      Please send where you want to go <b>from</b> and <b>to</b>.
+    </p>
 
-<div class="card">
-  <h3>✈ Transport & Tickets</h3>
+    <form action="https://wa.me/84778532223" method="get" target="_blank">
+      <textarea
+        name="text"
+        rows="3"
+        placeholder="From: (hotel / location)
+To: (destination)"
+        class="input"
+      ></textarea>
 
-  <a class="button" href="https://wa.me/84778532223" target="_blank">
-    Contact via WhatsApp
-  </a>
+      <button class="btn secondary" type="submit">
+        Send transfer request
+      </button>
+    </form>
+  </div>
 
-  <p style="font-size:14px;color:var(--muted);text-align:center">
-    You can purchase tickets to any destination through us.<br>
-    Please check availability with your guide <b>Tina</b>.
-  </p>
-</div>
-
-<div class="card">
-  <h3>🚕 Transfers</h3>
-  <p style="color:var(--muted);font-size:14px">
-    Airport transfers, city transfers, private cars and minibuses.<br>
-    From 1 passenger to large groups.
-  </p>
-</div>
-
-<div class="footer" style="text-align:center;color:var(--muted);margin-top:40px">
-  <strong>VY</strong><br>
-  © VY · Nha Trang
-</div>
-
-</div>
-</body>
-</html>
+</main>
