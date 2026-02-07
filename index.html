@@ -2,23 +2,137 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>VY — Travel Assistant</title>
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+<title>VY – Travel Assistant in Nha Trang</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<style>
+:root{
+  --bg: linear-gradient(180deg,#eaf9f6 0%,#f6fffd 100%);
+  --card:#ffffff;
+  --text:#1f2d2b;
+  --muted:#6b7c78;
+  --accent:#2a9d8f;
+}
+
+*{
+  box-sizing:border-box;
+  font-family:system-ui,-apple-system,sans-serif;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+}
+
+.container{
+  max-width:760px;
+  margin:auto;
+  padding:20px;
+}
+
+header{
+  text-align:center;
+  margin-bottom:28px;
+}
+
+header h1{
+  margin:0;
+  font-size:34px;
+  letter-spacing:1px;
+}
+
+header p{
+  margin-top:6px;
+  color:var(--muted);
+  font-size:15px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+.card{
+  background:var(--card);
+  padding:22px;
+  border-radius:22px;
+  text-decoration:none;
+  color:var(--text);
+  font-weight:600;
+  font-size:17px;
+  box-shadow:0 10px 26px rgba(0,0,0,.08);
+  transition:.2s ease;
+}
+
+.card span{
+  display:block;
+  margin-top:6px;
+  font-size:13px;
+  color:var(--muted);
+  font-weight:500;
+}
+
+.card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 14px 32px rgba(0,0,0,.12);
+}
+
+.full{
+  grid-column:1 / -1;
+}
+
+footer{
+  text-align:center;
+  margin-top:36px;
+  font-size:12px;
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
 <div class="container">
+
+<header>
   <h1>VY</h1>
   <p>Your travel assistant in Nha Trang</p>
+</header>
 
-  <div class="grid">
-    <a class="card" href="hotels.html">Hotels</a>
-    <a class="card" href="restaurants.html">Restaurants</a>
-    <a class="card" href="tours.html">Tours</a>
-    <a class="card" href="transport.html">Transport & Tickets</a>
-    <a class="card" href="city-bus.html">City Buses</a>
-  </div>
+<div class="grid">
+
+  <a class="card" href="hotels.html">
+    🏨 Hotels
+    <span>2★ – 5★ · Resorts · Apartments</span>
+  </a>
+
+  <a class="card" href="restaurants.html">
+    🍽 Restaurants
+    <span>Halal · Seafood · Buffet</span>
+  </a>
+
+  <a class="card" href="tours.html">
+    🌴 Tours
+    <span>Islands · Nature · Culture</span>
+  </a>
+
+  <a class="card" href="transport.html">
+    ✈️ Transport & Tickets
+    <span>Buses · Flights · Trains</span>
+  </a>
+
+  <a class="card full" href="city-bus.html">
+    🚌 City Buses
+    <span>Routes & directions around Nha Trang</span>
+  </a>
+
 </div>
 
+<footer>
+  © VY · Nha Trang
+</footer>
+
+</div>
 </body>
 </html>
