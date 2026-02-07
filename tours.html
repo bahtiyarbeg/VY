@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tours from Nha Trang</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --bg: linear-gradient(180deg,#eaf9f6,#f6fffd);
+  --card:#fff;
+  --text:#1f2d2b;
+  --muted:#6b7c78;
+  --accent:#f4a261;
+  --accent2:#2a9d8f;
+}
+
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+.container{padding:16px;max-width:720px;margin:auto}
+
+.back{
+  display:inline-block;
+  margin-bottom:10px;
+  color:var(--accent2);
+  text-decoration:none;
+  font-weight:600;
+}
+
+h1{text-align:center;margin:6px 0}
+.subtitle{text-align:center;color:var(--muted);margin-bottom:16px}
+
+.lang{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin-bottom:16px;
+}
+
+.lang button{
+  border:none;
+  padding:8px 14px;
+  border-radius:12px;
+  background:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.lang button.active{
+  background:var(--accent2);
+  color:#fff;
+}
+
+.card{
+  background:var(--card);
+  padding:16px;
+  border-radius:18px;
+  margin-bottom:14px;
+  box-shadow:0 8px 22px rgba(0,0,0,.08);
+}
+
+.card h3{margin:0 0 6px}
+.card p{margin:0 0 8px;color:var(--muted);font-size:14px}
+
+.btn{
+  display:block;
+  text-align:center;
+  padding:12px;
+  border-radius:14px;
+  background:var(--accent);
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<a class="back" href="index.html">← Back</a>
+
+<h1 data-en="Tours from Nha Trang"
+    data-ru="Экскурсии из Нячанга"
+    data-vi="Tour từ Nha Trang"></h1>
+
+<p class="subtitle"
+   data-en="Popular excursions · Nature · Adventure · Culture"
+   data-ru="Популярные экскурсии · Природа · Приключения · Культура"
+   data-vi="Tour phổ biến · Thiên nhiên · Phiêu lưu · Văn hóa"></p>
+
+<div class="lang">
+  <button class="active" onclick="setLang('en')">EN</button>
+  <button onclick="setLang('ru')">RU</button>
+  <button onclick="setLang('vi')">VI</button>
+</div>
+
+<!-- TOUR LIST -->
+
+<div class="card">
+<h3 data-en="🏝 Robinson Island"
+    data-ru="🏝 Остров Робинзон"
+    data-vi="🏝 Đảo Robinson"></h3>
+<p data-en="Beach, swimming, snorkeling, lunch"
+   data-ru="Пляж, купание, снорклинг, обед"
+   data-vi="Bãi biển, bơi lội, lặn ngắm san hô, ăn trưa"></p>
+<a class="btn" href="https://wa.me/84778532223">WhatsApp</a>
+</div>
+
+<div class="card">
+<h3 data-en="🏙 Nha Trang City Tour"
+    data-ru="🏙 Сити-тур Нячанг"
+    data-vi="🏙 City Tour Nha Trang"></h3>
+<p data-en="Pagodas, churches, market, culture"
+   data-ru="Пагоды, храмы, рынок, культура"
+   data-vi="Chùa chiền, nhà thờ, chợ, văn hóa"></p>
+<a class="btn" href="https://wa.me/84778532223">WhatsApp</a>
+</div>
+
+<div class="card">
+<h3 data-en="🌴 Kong Forest Adventure"
+    data-ru="🌴 Конг Форест"
+    data-vi="🌴 Kong Forest"></h3>
+<p data-en="Zipline, ATV, jungle experience"
+   data-ru="Зиплайн, квадроциклы, джунгли"
+   data-vi="Zipline, xe địa hình, rừng"></p>
+<a class="btn" href="https://wa.me/84778532223">WhatsApp</a>
+</div>
+
+<div class="card">
+<h3 data-en="🎭 Ambassador Show"
+    data-ru="🎭 Шоу Ambassador"
+    data-vi="🎭 Show Ambassador"></h3>
+<p data-en="Evening show, music, sea view"
+   data-ru="Вечернее шоу, музыка, вид на море"
+   data-vi="Show buổi tối, âm nhạc, view biển"></p>
+<a class="btn" href="https://wa.me/84778532223">WhatsApp</a>
+</div>
+
+<div class="card">
+<h3 data-en="🌊 3 Islands Tour"
+    data-ru="🌊 3 острова"
+    data-vi="🌊 Tour 3 đảo"></h3>
+<p data-en="Boat trip, snorkeling, lunch"
+   data-ru="Катер, снорклинг, обед"
+   data-vi="Tàu, lặn biển, ăn trưa"></p>
+<a class="btn" href="https://wa.me/84778532223">WhatsApp</a>
+</div>
+
+<div class="card">
+<h3 data-en="💦 Ba Ho Waterfalls"
+    data-ru="💦 Водопады Ба Хо"
+    data-vi="💦 Thác Ba Hồ"></h3>
+<p data-en="Jungle trekking, waterfalls"
+   data-ru="Треккинг, водопады"
+   data-vi="Trekking rừng, thác nước"></p>
+<a class="btn" href="https://wa.me/84778532223">WhatsApp</a>
+</div>
+
+<div class="card">
+<h3 data-en="🏖 Doc Let Beach"
+    data-ru="🏖 Пляж Док Лет"
+    data-vi="🏖 Bãi biển Dốc Lết"></h3>
+<p data-en="White sand, clear water"
+   data-ru="Белый песок, чистое море"
+   data-vi="Cát trắng, nước trong"></p>
+<a class="btn" href="https://wa.me/84778532223">WhatsApp</a>
+</div>
+
+<div class="card">
+<h3 data-en="🎢 Vinpearl Land"
+    data-ru="🎢 Винперл"
+    data-vi="🎢 Vinpearl"></h3>
+<p data-en="Amusement park, cable car"
+   data-ru="Парк развлечений, канатка"
+   data-vi="Công viên, cáp treo"></p>
+<a class="btn" href="https://wa.me/84778532223">WhatsApp</a>
+</div>
+
+<div class="card">
+<h3 data-en="♨️ Mud Bath"
+    data-ru="♨️ Грязевые ванны"
+    data-vi="♨️ Tắm bùn"></h3>
+<p data-en="Hot mineral mud & spa"
+   data-ru="Минеральная грязь, спа"
+   data-vi="Bùn khoáng, spa"></p>
+<a class="btn" href="https://wa.me/84778532223">WhatsApp</a>
+</div>
+
+<div class="card">
+<h3 data-en="🌋 Dalat 1 Day"
+    data-ru="🌋 Далат 1 день"
+    data-vi="🌋 Đà Lạt 1 ngày"></h3>
+<p data-en="Mountains, waterfalls"
+   data-ru="Горы, водопады"
+   data-vi="Núi, thác nước"></p>
+<a class="btn" href="https://wa.me/84778532223">WhatsApp</a>
+</div>
+
+</div>
+
+<script>
+function setLang(lang){
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.innerText = el.dataset[lang];
+  });
+  document.querySelectorAll('.lang button').forEach(b=>b.classList.remove('active'));
+  document.querySelector('.lang button[onclick="setLang(\''+lang+'\')"]').classList.add('active');
+}
+</script>
+
+</body>
+</html>
