@@ -2,231 +2,188 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Tours from Nha Trang — VY</title>
+<title>VY — Tours in Nha Trang</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-:root{
-  --bg: linear-gradient(180deg,#eaf9f6,#f6fffd);
-  --card: rgba(255,255,255,.95);
-  --text: #1f2d2b;
-  --muted: #6b7c78;
-  --accent: #2a9d8f;
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: linear-gradient(180deg, #e9f7f5, #f6fbfa);
+    color: #1f2d2b;
 }
-
-*{box-sizing:border-box;font-family:system-ui,-apple-system,sans-serif}
-
-body{margin:0;background:var(--bg);color:var(--text)}
-
-header{
-  padding:18px;
-  text-align:center;
-  position:relative;
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
 }
-
-.back{
-  position:absolute;
-  left:16px;
-  top:18px;
-  text-decoration:none;
-  font-weight:600;
-  color:var(--accent);
+.back {
+    color: #2b8f87;
+    text-decoration: none;
+    font-weight: 500;
 }
-
-h1{margin:6px 0 4px}
-.subtitle{color:var(--muted);font-size:14px}
-
-.lang{
-  display:flex;
-  justify-content:center;
-  gap:8px;
-  margin:12px 0 20px;
+h1 {
+    text-align: center;
+    margin: 10px 0 20px;
 }
-.lang button{
-  border:none;
-  padding:8px 14px;
-  border-radius:12px;
-  background:#fff;
-  font-weight:600;
-  cursor:pointer;
+.lang-switch {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
 }
-.lang button.active{
-  background:var(--accent);
-  color:#fff;
+.lang-switch button {
+    border: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: #e0f2ef;
+    cursor: pointer;
+    font-weight: 500;
 }
-
-.section{
-  padding:10px 16px 30px;
+.lang-switch button.active {
+    background: #2b8f87;
+    color: white;
 }
-
-.card{
-  background:var(--card);
-  padding:16px;
-  border-radius:18px;
-  margin-bottom:14px;
-  box-shadow:0 8px 22px rgba(0,0,0,.08);
+.tour {
+    background: white;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
-
-.card h3{margin:0 0 6px}
-.card p{margin:0;color:var(--muted);font-size:14px}
-
-footer{
-  margin-top:40px;
-  padding:30px 16px;
-  text-align:center;
-  background:rgba(255,255,255,.7);
-  backdrop-filter:blur(10px);
+.tour h3 {
+    margin: 0 0 6px;
 }
-
-footer h3{margin:6px 0}
-footer p{font-size:13px;color:var(--muted)}
-
-.services{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px 12px;
-  justify-content:center;
-  margin:16px 0;
+.tour p {
+    margin: 0;
+    color: #4a6f6a;
 }
-.services span{
-  background:rgba(0,0,0,.05);
-  padding:6px 10px;
-  border-radius:14px;
-  font-size:12px;
+.footer {
+    text-align: center;
+    margin: 40px 0 20px;
+}
+.footer strong {
+    display: block;
+    margin-bottom: 10px;
+}
+.footer .services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+.footer .services span {
+    background: #e0f2ef;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
 }
 </style>
 </head>
 
 <body>
+<div class="container">
 
-<header>
-  <a class="back" href="index.html">← Back</a>
-  <h1 data-en="Tours from Nha Trang"
-      data-ru="Экскурсии из Нячанга"
-      data-vi="Tour từ Nha Trang"></h1>
-  <div class="subtitle"
-       data-en="Nature · Islands · Culture · Adventure"
-       data-ru="Природа · Острова · Культура · Приключения"
-       data-vi="Thiên nhiên · Đảo · Văn hóa · Phiêu lưu"></div>
-</header>
+<a class="back" href="index.html">← Back</a>
+<h1>Tours & Experiences</h1>
 
-<div class="lang">
-  <button class="active" onclick="setLang('en')">EN</button>
-  <button onclick="setLang('ru')">RU</button>
-  <button onclick="setLang('vi')">VI</button>
+<div class="lang-switch">
+    <button onclick="setLang('en')" class="active">EN</button>
+    <button onclick="setLang('ru')">RU</button>
+    <button onclick="setLang('vi')">VI</button>
 </div>
 
-<div class="section">
+<div id="tours"></div>
 
-<div class="card">
-<h3 data-en="🏝 Robinson Island"
-    data-ru="🏝 Остров Робинзон"
-    data-vi="🏝 Đảo Robinson"></h3>
-<p data-en="Beach, swimming, snorkeling, lunch"
-   data-ru="Пляж, купание, снорклинг, обед"
-   data-vi="Bãi biển, bơi lội, lặn biển, ăn trưa"></p>
-</div>
-
-<div class="card">
-<h3 data-en="🏙 Nha Trang City Tour"
-    data-ru="🏙 Сити-тур Нячанг"
-    data-vi="🏙 City Tour Nha Trang"></h3>
-<p data-en="Pagodas, churches, market, culture"
-   data-ru="Пагоды, храмы, рынок, культура"
-   data-vi="Chùa chiền, nhà thờ, chợ, văn hóa"></p>
-</div>
-
-<div class="card">
-<h3 data-en="🌴 Kong Forest Adventure"
-    data-ru="🌴 Конг Форест"
-    data-vi="🌴 Kong Forest"></h3>
-<p data-en="Zipline, ATV, jungle experience"
-   data-ru="Зиплайн, квадроциклы, джунгли"
-   data-vi="Zipline, xe địa hình, rừng"></p>
-</div>
-
-<div class="card">
-<h3 data-en="🎭 Ambassador Show"
-    data-ru="🎭 Шоу Ambassador"
-    data-vi="🎭 Show Ambassador"></h3>
-<p data-en="Evening show, music, sea view"
-   data-ru="Вечернее шоу, музыка, вид на море"
-   data-vi="Show buổi tối, âm nhạc, view biển"></p>
-</div>
-
-<div class="card">
-<h3 data-en="🌊 Island Hopping (3 Islands)"
-    data-ru="🌊 3 острова"
-    data-vi="🌊 Tour 3 đảo"></h3>
-<p data-en="Boat trip, snorkeling, lunch"
-   data-ru="Катер, снорклинг, обед"
-   data-vi="Tàu, lặn biển, ăn trưa"></p>
-</div>
-
-<div class="card">
-<h3 data-en="💦 Ba Ho Waterfalls"
-    data-ru="💦 Водопады Ба Хо"
-    data-vi="💦 Thác Ba Hồ"></h3>
-<p data-en="Jungle trekking and waterfalls"
-   data-ru="Треккинг и водопады"
-   data-vi="Trekking rừng và thác nước"></p>
-</div>
-
-<div class="card">
-<h3 data-en="🏖 Doc Let Beach"
-    data-ru="🏖 Пляж Док Лет"
-    data-vi="🏖 Bãi biển Dốc Lết"></h3>
-<p data-en="White sand, clear water"
-   data-ru="Белый песок, чистое море"
-   data-vi="Cát trắng, nước trong"></p>
-</div>
-
-<div class="card">
-<h3 data-en="🎢 Vinpearl Land"
-    data-ru="🎢 Винперл"
-    data-vi="🎢 Vinpearl"></h3>
-<p data-en="Amusement park, cable car"
-   data-ru="Парк развлечений, канатка"
-   data-vi="Công viên, cáp treo"></p>
-</div>
-
-<div class="card">
-<h3 data-en="🌋 Dalat 1 Day Tour"
-    data-ru="🌋 Далат 1 день"
-    data-vi="🌋 Đà Lạt 1 ngày"></h3>
-<p data-en="Mountains, waterfalls, cool climate"
-   data-ru="Горы, водопады, прохладный климат"
-   data-vi="Núi, thác nước, khí hậu mát mẻ"></p>
+<div class="footer">
+    <strong>Your guide in Nha Trang — Tina</strong>
+    <div class="services">
+        <span>Excursions</span>
+        <span>Transfers</span>
+        <span>eSIM & SIM</span>
+        <span>Scooter & motorbike rental</span>
+        <span>Car rental</span>
+        <span>Ticket booking</span>
+    </div>
 </div>
 
 </div>
-
-<footer>
-  <h3>VY</h3>
-  <p>Your guide in Nha Trang — <b>Tina</b></p>
-  <div class="services">
-    <span>Excursions</span>
-    <span>Transfers</span>
-    <span>eSIM & SIM</span>
-    <span>Scooter & motorbike rental</span>
-    <span>Car rental</span>
-    <span>Ticket booking</span>
-  </div>
-  <p>© VY · Nha Trang</p>
-</footer>
 
 <script>
-function setLang(lang){
-  document.documentElement.lang = lang;
-  document.querySelectorAll('[data-en]').forEach(el=>{
-    el.innerText = el.dataset[lang];
-  });
-  document.querySelectorAll('.lang button')
-    .forEach(b=>b.classList.remove('active'));
-  document.querySelector(
-    '.lang button[onclick="setLang(\\''+lang+'\\')"]'
-  ).classList.add('active');
+let currentLang = 'en';
+
+const tours = [
+{
+en: {title: "Island Hopping (3 Islands)", desc: "Snorkeling, swimming and relaxing on tropical islands."},
+ru: {title: "Тур по 3 островам", desc: "Снорклинг, купание и отдых на тропических островах."},
+vi: {title: "Tour 3 đảo", desc: "Lặn ngắm san hô và thư giãn trên các đảo nhiệt đới."}
+},
+{
+en: {title: "Island Hopping (4 Islands)", desc: "Extended island tour with more snorkeling spots."},
+ru: {title: "Тур по 4 островам", desc: "Расширенная программа с дополнительными островами."},
+vi: {title: "Tour 4 đảo", desc: "Hành trình mở rộng với nhiều điểm lặn hơn."}
+},
+{
+en: {title: "Robinson Island", desc: "Wild beach, crystal water and a relaxed atmosphere."},
+ru: {title: "Остров Робинзон", desc: "Дикий пляж, чистая вода и полное спокойствие."},
+vi: {title: "Đảo Robinson", desc: "Bãi biển hoang sơ và không gian yên bình."}
+},
+{
+en: {title: "Hon Mun Snorkeling", desc: "Best coral reef snorkeling area in Nha Trang."},
+ru: {title: "Снорклинг Хон Мун", desc: "Лучшие коралловые рифы Нячанга."},
+vi: {title: "Lặn biển Hòn Mun", desc: "Khu vực san hô đẹp nhất Nha Trang."}
+},
+{
+en: {title: "Nha Trang City Tour", desc: "Main attractions, temples and local life."},
+ru: {title: "Обзорная экскурсия по Нячангу", desc: "Главные достопримечательности и культура города."},
+vi: {title: "City tour Nha Trang", desc: "Tham quan các điểm nổi bật của thành phố."}
+},
+{
+en: {title: "Ba Ho Waterfalls", desc: "Nature adventure with waterfalls and hiking."},
+ru: {title: "Водопады Ба Хо", desc: "Природный маршрут с водопадами."},
+vi: {title: "Thác Ba Hồ", desc: "Khám phá thiên nhiên và thác nước."}
+},
+{
+en: {title: "Kong Forest Adventure", desc: "Zipline, jungle activities and river crossing."},
+ru: {title: "Конг Форест", desc: "Зиплайн, джунгли и активный отдых."},
+vi: {title: "Kong Forest", desc: "Zipline và hoạt động mạo hiểm."}
+},
+{
+en: {title: "Scenic Airplane Flight", desc: "Panoramic flight over Nha Trang coastline."},
+ru: {title: "Полёт на аэроплане", desc: "Панорамный полёт над побережьем."},
+vi: {title: "Bay ngắm cảnh", desc: "Chuyến bay ngắm cảnh bờ biển."}
+},
+{
+en: {title: "Private Yacht Rental", desc: "Luxury private yacht with crew."},
+ru: {title: "Аренда яхты", desc: "Частная яхта с экипажем."},
+vi: {title: "Thuê du thuyền", desc: "Du thuyền riêng cao cấp."}
+},
+{
+en: {title: "Catamaran & Sunset Cruise", desc: "Relaxing sea cruise at sunset."},
+ru: {title: "Катамаран и закатный круиз", desc: "Морская прогулка на закате."},
+vi: {title: "Du thuyền hoàng hôn", desc: "Thư giãn trên biển lúc hoàng hôn."}
 }
+];
+
+function renderTours() {
+    const container = document.getElementById("tours");
+    container.innerHTML = "";
+    tours.forEach(t => {
+        const div = document.createElement("div");
+        div.className = "tour";
+        div.innerHTML = `<h3>${t[currentLang].title}</h3><p>${t[currentLang].desc}</p>`;
+        container.appendChild(div);
+    });
+}
+
+function setLang(lang) {
+    currentLang = lang;
+    document.querySelectorAll(".lang-switch button").forEach(b => b.classList.remove("active"));
+    event.target.classList.add("active");
+    renderTours();
+}
+
+renderTours();
 </script>
 
 </body>
