@@ -2,58 +2,46 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Tours from Nha Trang</title>
+<title>Tours from Nha Trang — VY</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 :root{
   --bg: linear-gradient(180deg,#eaf9f6,#f6fffd);
-  --card:#ffffff;
-  --text:#1f2d2b;
-  --muted:#6b7c78;
-  --accent:#2a9d8f;
+  --card: rgba(255,255,255,.95);
+  --text: #1f2d2b;
+  --muted: #6b7c78;
+  --accent: #2a9d8f;
 }
 
 *{box-sizing:border-box;font-family:system-ui,-apple-system,sans-serif}
 
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-}
+body{margin:0;background:var(--bg);color:var(--text)}
 
-.container{
-  padding:16px;
-  max-width:760px;
-  margin:auto;
+header{
+  padding:18px;
+  text-align:center;
+  position:relative;
 }
 
 .back{
-  display:inline-block;
-  margin-bottom:12px;
-  padding:10px 16px;
-  background:#fff;
-  border-radius:14px;
+  position:absolute;
+  left:16px;
+  top:18px;
   text-decoration:none;
   font-weight:600;
-  color:var(--text);
-  box-shadow:0 6px 16px rgba(0,0,0,.08);
+  color:var(--accent);
 }
 
-h1{text-align:center;margin:6px 0}
-.subtitle{
-  text-align:center;
-  color:var(--muted);
-  margin-bottom:18px;
-}
+h1{margin:6px 0 4px}
+.subtitle{color:var(--muted);font-size:14px}
 
 .lang{
   display:flex;
   justify-content:center;
   gap:8px;
-  margin-bottom:20px;
+  margin:12px 0 20px;
 }
-
 .lang button{
   border:none;
   padding:8px 14px;
@@ -62,10 +50,13 @@ h1{text-align:center;margin:6px 0}
   font-weight:600;
   cursor:pointer;
 }
-
 .lang button.active{
   background:var(--accent);
   color:#fff;
+}
+
+.section{
+  padding:10px 16px 30px;
 }
 
 .card{
@@ -77,27 +68,47 @@ h1{text-align:center;margin:6px 0}
 }
 
 .card h3{margin:0 0 6px}
-.card p{
-  margin:0;
-  color:var(--muted);
-  font-size:14px;
+.card p{margin:0;color:var(--muted);font-size:14px}
+
+footer{
+  margin-top:40px;
+  padding:30px 16px;
+  text-align:center;
+  background:rgba(255,255,255,.7);
+  backdrop-filter:blur(10px);
+}
+
+footer h3{margin:6px 0}
+footer p{font-size:13px;color:var(--muted)}
+
+.services{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 12px;
+  justify-content:center;
+  margin:16px 0;
+}
+.services span{
+  background:rgba(0,0,0,.05);
+  padding:6px 10px;
+  border-radius:14px;
+  font-size:12px;
 }
 </style>
 </head>
 
 <body>
-<div class="container">
 
-<a class="back" href="index.html">← Back</a>
-
-<h1 data-en="Tours from Nha Trang"
-    data-ru="Экскурсии из Нячанга"
-    data-vi="Tour từ Nha Trang"></h1>
-
-<p class="subtitle"
-   data-en="Popular excursions · Nature · Adventure · Culture"
-   data-ru="Популярные экскурсии · Природа · Приключения · Культура"
-   data-vi="Tour phổ biến · Thiên nhiên · Phiêu lưu · Văn hóa"></p>
+<header>
+  <a class="back" href="index.html">← Back</a>
+  <h1 data-en="Tours from Nha Trang"
+      data-ru="Экскурсии из Нячанга"
+      data-vi="Tour từ Nha Trang"></h1>
+  <div class="subtitle"
+       data-en="Nature · Islands · Culture · Adventure"
+       data-ru="Природа · Острова · Культура · Приключения"
+       data-vi="Thiên nhiên · Đảo · Văn hóa · Phiêu lưu"></div>
+</header>
 
 <div class="lang">
   <button class="active" onclick="setLang('en')">EN</button>
@@ -105,7 +116,7 @@ h1{text-align:center;margin:6px 0}
   <button onclick="setLang('vi')">VI</button>
 </div>
 
-<!-- TOURS -->
+<div class="section">
 
 <div class="card">
 <h3 data-en="🏝 Robinson Island"
@@ -113,14 +124,14 @@ h1{text-align:center;margin:6px 0}
     data-vi="🏝 Đảo Robinson"></h3>
 <p data-en="Beach, swimming, snorkeling, lunch"
    data-ru="Пляж, купание, снорклинг, обед"
-   data-vi="Bãi biển, bơi lội, lặn ngắm san hô, ăn trưa"></p>
+   data-vi="Bãi biển, bơi lội, lặn biển, ăn trưa"></p>
 </div>
 
 <div class="card">
 <h3 data-en="🏙 Nha Trang City Tour"
     data-ru="🏙 Сити-тур Нячанг"
     data-vi="🏙 City Tour Nha Trang"></h3>
-<p data-en="Pagodas, churches, local market, culture"
+<p data-en="Pagodas, churches, market, culture"
    data-ru="Пагоды, храмы, рынок, культура"
    data-vi="Chùa chiền, nhà thờ, chợ, văn hóa"></p>
 </div>
@@ -144,7 +155,7 @@ h1{text-align:center;margin:6px 0}
 </div>
 
 <div class="card">
-<h3 data-en="🌊 3 Islands Tour"
+<h3 data-en="🌊 Island Hopping (3 Islands)"
     data-ru="🌊 3 острова"
     data-vi="🌊 Tour 3 đảo"></h3>
 <p data-en="Boat trip, snorkeling, lunch"
@@ -156,9 +167,9 @@ h1{text-align:center;margin:6px 0}
 <h3 data-en="💦 Ba Ho Waterfalls"
     data-ru="💦 Водопады Ба Хо"
     data-vi="💦 Thác Ba Hồ"></h3>
-<p data-en="Jungle trekking, waterfalls"
-   data-ru="Треккинг, водопады"
-   data-vi="Trekking rừng, thác nước"></p>
+<p data-en="Jungle trekking and waterfalls"
+   data-ru="Треккинг и водопады"
+   data-vi="Trekking rừng và thác nước"></p>
 </div>
 
 <div class="card">
@@ -180,15 +191,6 @@ h1{text-align:center;margin:6px 0}
 </div>
 
 <div class="card">
-<h3 data-en="♨️ Mud Bath"
-    data-ru="♨️ Грязевые ванны"
-    data-vi="♨️ Tắm bùn"></h3>
-<p data-en="Hot mineral mud & spa"
-   data-ru="Минеральная грязь, спа"
-   data-vi="Bùn khoáng, spa"></p>
-</div>
-
-<div class="card">
 <h3 data-en="🌋 Dalat 1 Day Tour"
     data-ru="🌋 Далат 1 день"
     data-vi="🌋 Đà Lạt 1 ngày"></h3>
@@ -198,6 +200,20 @@ h1{text-align:center;margin:6px 0}
 </div>
 
 </div>
+
+<footer>
+  <h3>VY</h3>
+  <p>Your guide in Nha Trang — <b>Tina</b></p>
+  <div class="services">
+    <span>Excursions</span>
+    <span>Transfers</span>
+    <span>eSIM & SIM</span>
+    <span>Scooter & motorbike rental</span>
+    <span>Car rental</span>
+    <span>Ticket booking</span>
+  </div>
+  <p>© VY · Nha Trang</p>
+</footer>
 
 <script>
 function setLang(lang){
@@ -209,4 +225,9 @@ function setLang(lang){
     .forEach(b=>b.classList.remove('active'));
   document.querySelector(
     '.lang button[onclick="setLang(\\''+lang+'\\')"]'
-  ).classList.add('
+  ).classList.add('active');
+}
+</script>
+
+</body>
+</html>
