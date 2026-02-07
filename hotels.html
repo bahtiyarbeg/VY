@@ -3,130 +3,149 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Отели Нячанга — vy</title>
-<link rel="stylesheet" href="css/style.css">
+<title>Отели Нячанга</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: linear-gradient(180deg,#eaf9f6,#f6fffd);
+  color:#1f2d2b;
+}
+
+.header {
+  padding:16px;
+  text-align:center;
+}
+
+.back {
+  display:inline-block;
+  margin-bottom:12px;
+}
+
+.container {
+  padding:16px;
+}
+
+h2 {
+  margin-bottom:4px;
+}
+
+.note {
+  font-size:14px;
+  color:#6b7c78;
+  margin-bottom:20px;
+}
+
+.section-title {
+  margin:24px 0 8px;
+  font-size:18px;
+}
+
+.hotel-card {
+  background:#fff;
+  border-radius:16px;
+  padding:14px;
+  margin-bottom:12px;
+  display:flex;
+  gap:12px;
+  align-items:center;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+  cursor:pointer;
+}
+
+.hotel-card img {
+  width:72px;
+  height:72px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+.hotel-info strong {
+  display:block;
+}
+
+.btn {
+  display:block;
+  margin:24px 0;
+  padding:16px;
+  text-align:center;
+  background:#f4a261;
+  color:#fff;
+  font-weight:600;
+  border-radius:16px;
+  text-decoration:none;
+}
+</style>
 </head>
+
 <body>
 
-<header class="top-nav">
-  <a href="index.html">← Назад</a>
-</header>
-
-<main class="container">
-
-<!-- HERO -->
-<section class="hero-card">
-  <img src="images/hotel1.jpg" alt="Hotels in Nha Trang">
-  <div class="hero-overlay">
-    <h1>Отели Нячанга</h1>
-    <p>2★ – 5★ · Апарт-отели · Резорты</p>
+<div class="header">
+  <a href="index.html" class="back">← Назад</a>
+  <h2>Отели Нячанга</h2>
+  <div class="note">
+    2★ – 5★ · Апарт-отели · Курорты<br>
+    Нажмите на отель — откроется Google Maps
   </div>
-</section>
-
-<!-- FILTER INFO -->
-<div class="info-card">
-  <p>Нажмите на название отеля, чтобы открыть его в Google Maps с отзывами и рейтингом.</p>
 </div>
 
-<!-- HOTEL LIST -->
-<section class="list">
+<div class="container" id="hotels"></div>
 
-<!-- 5★ -->
-<h2>★★★★★ Пятизвёздочные</h2>
-
-<div class="item">
-  <a target="_blank" href="https://www.google.com/maps/search/InterContinental+Nha+Trang">
-    InterContinental Nha Trang
-  </a>
-</div>
-
-<div class="item">
-  <a target="_blank" href="https://www.google.com/maps/search/Sheraton+Nha+Trang">
-    Sheraton Nha Trang
-  </a>
-</div>
-
-<div class="item">
-  <a target="_blank" href="https://www.google.com/maps/search/Vinpearl+Resort+Nha+Trang">
-    Vinpearl Resort Nha Trang
-  </a>
-</div>
-
-<div class="item">
-  <a target="_blank" href="https://www.google.com/maps/search/Sunrise+Nha+Trang">
-    Sunrise Nha Trang Beach Hotel
-  </a>
-</div>
-
-<!-- 4★ -->
-<h2>★★★★ Четырёхзвёздочные</h2>
-
-<div class="item">
-  <a target="_blank" href="https://www.google.com/maps/search/Liberty+Central+Nha+Trang">
-    Liberty Central Nha Trang
-  </a>
-</div>
-
-<div class="item">
-  <a target="_blank" href="https://www.google.com/maps/search/Novotel+Nha+Trang">
-    Novotel Nha Trang
-  </a>
-</div>
-
-<div class="item">
-  <a target="_blank" href="https://www.google.com/maps/search/Citadines+Bayfront+Nha+Trang">
-    Citadines Bayfront
-  </a>
-</div>
-
-<!-- 3★ -->
-<h2>★★★ Трёхзвёздочные</h2>
-
-<div class="item">
-  <a target="_blank" href="https://www.google.com/maps/search/Maple+Hotel+Nha+Trang">
-    Maple Hotel
-  </a>
-</div>
-
-<div class="item">
-  <a target="_blank" href="https://www.google.com/maps/search/Galina+Hotel+Nha+Trang">
-    Galina Hotel
-  </a>
-</div>
-
-<div class="item">
-  <a target="_blank" href="https://www.google.com/maps/search/Dendro+Hotel+Nha+Trang">
-    Dendro Hotel
-  </a>
-</div>
-
-<!-- APART -->
-<h2>🏢 Апарт-отели</h2>
-
-<div class="item">
-  <a target="_blank" href="https://www.google.com/maps/search/Muong+Thanh+Apart+Nha+Trang">
-    Muong Thanh Apartments
-  </a>
-</div>
-
-<div class="item">
-  <a target="_blank" href="https://www.google.com/maps/search/Gold+Coast+Nha+Trang">
-    Gold Coast Apartments
-  </a>
-</div>
-
-</section>
-
-<!-- CTA -->
-<a class="btn primary"
-   href="https://wa.me/84778532223"
-   target="_blank">
-   Подобрать и забронировать через WhatsApp
+<a class="btn" href="https://wa.me/84778532223" target="_blank">
+  Подобрать и забронировать через WhatsApp
 </a>
 
-</main>
+<script>
+const hotels = [
+  // ===== 5 ★ =====
+  {name:"InterContinental Nha Trang",stars:5,img:"images/hotel1.jpg"},
+  {name:"Sheraton Nha Trang",stars:5,img:"images/hotel2.jpg"},
+  {name:"Vinpearl Resort Nha Trang",stars:5,img:"images/hotel1.jpg"},
+  {name:"Sunrise Nha Trang Beach Hotel",stars:5,img:"images/hotel2.jpg"},
+  {name:"Amiana Resort Nha Trang",stars:5,img:"images/hotel1.jpg"},
+  {name:"Mia Resort Nha Trang",stars:5,img:"images/hotel2.jpg"},
 
-<a class="fab whatsapp" href="https://wa.me/84778532223" target="_blank">WA</a>
+  // ===== 4 ★ =====
+  {name:"Novotel Nha Trang",stars:4,img:"images/hotel1.jpg"},
+  {name:"Liberty Central Nha Trang",stars:4,img:"images/hotel2.jpg"},
+  {name:"Citadines Bayfront",stars:4,img:"images/hotel1.jpg"},
+  {name:"Regalia Gold Hotel",stars:4,img:"images/hotel2.jpg"},
+  {name:"Aaron Hotel",stars:4,img:"images/hotel1.jpg"},
+
+  // ===== 3 ★ =====
+  {name:"Maple Hotel",stars:3,img:"images/hotel2.jpg"},
+  {name:"Galina Hotel",stars:3,img:"images/hotel1.jpg"},
+  {name:"Dendro Hotel",stars:3,img:"images/hotel2.jpg"},
+  {name:"Galliot Hotel",stars:3,img:"images/hotel1.jpg"},
+  {name:"Majestic Star Hotel",stars:3,img:"images/hotel2.jpg"},
+
+  // ===== APART =====
+  {name:"Gold Coast Apartments",stars:0,img:"images/hotel1.jpg"},
+  {name:"Muong Thanh Apartments",stars:0,img:"images/hotel2.jpg"},
+  {name:"Panorama Apartments",stars:0,img:"images/hotel1.jpg"}
+];
+
+const container = document.getElementById("hotels");
+
+hotels.forEach(hotel=>{
+  const div=document.createElement("div");
+  div.className="hotel-card";
+  div.onclick=()=>window.open(
+    "https://www.google.com/maps/search/"+encodeURIComponent(hotel.name),
+    "_blank"
+  );
+
+  div.innerHTML=`
+    <img src="${hotel.img}">
+    <div class="hotel-info">
+      <strong>${hotel.name}</strong>
+      ${hotel.stars ? "★".repeat(hotel.stars) : "Апарт-отель"}
+    </div>
+  `;
+  container.appendChild(div);
+});
+</script>
 
 </body>
 </html>
