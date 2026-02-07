@@ -2,22 +2,130 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>City Buses</title>
-<link rel="stylesheet" href="css/style.css">
+<title>City Buses | Nha Trang</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+  --bg: linear-gradient(180deg, #eaf9f6, #f6fffd);
+  --card: #ffffff;
+  --text: #1f2d2b;
+  --muted: #6b7c78;
+  --accent: #f4a261;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 720px;
+  margin: auto;
+  padding: 20px;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 16px;
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 16px;
+  margin-bottom: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.route {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.desc {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+}
+</style>
 </head>
+
 <body>
-
-<a class="back" href="index.html">Back</a>
-
 <div class="container">
-<h1>City Buses</h1>
-<p>Check routes in Google Maps</p>
 
-<div class="card">Bus №1 — North → Center → South</div>
-<div class="card">Bus №2 — Vinh Ngoc → Center</div>
-<div class="card">Bus №3 — Center → Vinpearl Port</div>
-<div class="card">Bus №4 — Center → Hon Chong</div>
-<div class="card">Bus №5 — Center → Dien Khanh</div>
+<a class="back" href="index.html">← Back</a>
+
+<h1>🚌 City Buses in Nha Trang</h1>
+<div class="subtitle">
+Public bus routes for tourists and residents
+</div>
+
+<div class="card">
+  <div class="route">Bus №1 — North ↔ Center ↔ South</div>
+  <div class="desc">Main coastal route, beach area, hotels, shopping streets.</div>
+</div>
+
+<div class="card">
+  <div class="route">Bus №2 — Vinh Ngoc ↔ City Center</div>
+  <div class="desc">Connects northern districts with central Nha Trang.</div>
+</div>
+
+<div class="card">
+  <div class="route">Bus №3 — City Center ↔ Vinpearl Port</div>
+  <div class="desc">Best route to Vinpearl cable car and port.</div>
+</div>
+
+<div class="card">
+  <div class="route">Bus №4 — City Center ↔ Hon Chong</div>
+  <div class="desc">Beach, Hon Chong rocks, northern attractions.</div>
+</div>
+
+<div class="card">
+  <div class="route">Bus №5 — City Center ↔ Dien Khanh</div>
+  <div class="desc">Suburban route, local markets and countryside.</div>
+</div>
+
+<div class="card">
+  <div class="route">Bus №6 — City Center ↔ Southern Bus Station</div>
+  <div class="desc">Intercity bus terminal access.</div>
+</div>
+
+<div class="card">
+  <div class="route">Bus №7 — City Center ↔ Cam Ranh Area</div>
+  <div class="desc">Regional direction, not airport express.</div>
+</div>
+
+<div class="card">
+  <div class="route">Bus №18 — City Center ↔ Cam Ranh Airport</div>
+  <div class="desc">Public bus to airport (budget option).</div>
+</div>
+
+<div class="footer">
+VY / TourVietnam · Your guide in Nha Trang — Tina
+</div>
 
 </div>
 </body>
