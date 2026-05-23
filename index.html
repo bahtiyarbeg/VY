@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>TourVietnam — Your guide in Nha Trang</title>
+<title>GetTravel — Your guide in Nha Trang</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -15,7 +15,9 @@
   --muted:#a7d7d4;
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 body{
   margin:0;
@@ -30,20 +32,19 @@ body{
   padding:28px 22px 40px;
 }
 
-/* HEADER */
 header{
   text-align:center;
   margin-bottom:40px;
 }
 
 header img{
-  height:64px;
+  height:70px;
   margin-bottom:10px;
 }
 
 header h1{
   margin:0;
-  font-size:28px;
+  font-size:30px;
 }
 
 header p{
@@ -52,7 +53,6 @@ header p{
   font-size:15px;
 }
 
-/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
@@ -66,11 +66,11 @@ header p{
   text-decoration:none;
   color:var(--text);
   box-shadow:0 14px 36px rgba(0,0,0,.4);
-  transition:.25s ease;
+  transition:.3s;
 }
 
 .card:hover{
-  transform:translateY(-6px);
+  transform:translateY(-5px);
   box-shadow:0 22px 48px rgba(0,0,0,.55);
 }
 
@@ -85,7 +85,6 @@ header p{
   font-size:14px;
 }
 
-/* PHRASES */
 .section{
   margin-top:60px;
 }
@@ -111,7 +110,6 @@ header p{
   color:var(--muted);
 }
 
-/* FOOTER */
 .footer{
   margin-top:70px;
   text-align:center;
@@ -151,12 +149,13 @@ header p{
 <div class="container">
 
 <header>
-  <img src="images/logo.png" alt="TourVietnam">
-  <h1>TourVietnam</h1>
+  <img src="images/logo.png" alt="GetTravel">
+  <h1>GetTravel</h1>
   <p>Your guide in Nha Trang — Tina</p>
 </header>
 
 <div class="grid">
+
   <a class="card" href="hotels.html">
     <h3>🏨 Hotels</h3>
     <p>3★ · 4★ · 5★ · Apartments</p>
@@ -181,10 +180,17 @@ header p{
     <h3>🚌 City Buses</h3>
     <p>All routes around Nha Trang</p>
   </a>
+
+  <a href="https://gettravelasia.netlify.app/" class="card">
+    <h3>🌐 Website</h3>
+    <p>VIP Tours • Islands • Excursions</p>
+  </a>
+
 </div>
 
 <div class="section">
   <h2>🇻🇳 Useful Vietnamese phrases</h2>
+
   <div class="words">
     <ul>
       <li>Xin chào — Hello</li>
@@ -199,7 +205,6 @@ header p{
 </div>
 
 <div class="footer">
-  <div>Your guide in Nha Trang — <strong>Tina</strong></div>
 
   <div class="services">
     <span>Excursions</span>
@@ -213,6 +218,7 @@ header p{
   <a class="whatsapp" href="https://wa.me/84778532223">
     WhatsApp: +84 778 532 223
   </a>
+
 </div>
 
 </div>
